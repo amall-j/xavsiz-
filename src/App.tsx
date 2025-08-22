@@ -1,4 +1,3 @@
-import "./App.css";
 import Login from "./pages/login/Login";
 
 function App() {
@@ -8,5 +7,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
