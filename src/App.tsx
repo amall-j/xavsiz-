@@ -19,7 +19,7 @@ function DashboardLayout({
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden">
         <Header title={title} extra={extra} />
-        <main className="flex-1 overflow-y-auto p-6 container">{children}</main>
+        <main className="flex-1 py-6 container">{children}</main>
       </div>
     </div>
   );

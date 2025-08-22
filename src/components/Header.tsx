@@ -1,5 +1,12 @@
-import type { ReactNode } from "react";
-import { Bell, User } from "lucide-react";
+import { useState, type ReactNode } from "react";
+import {
+  CalendarDays,
+  Sun,
+  Moon,
+  SlidersHorizontal,
+  FileInput,
+} from "lucide-react";
+import uzb from "../assets/uzb.svg";
 
 type HeaderProps = {
   title: string;
@@ -7,6 +14,7 @@ type HeaderProps = {
 };
 
 export default function Header({ title, extra }: HeaderProps) {
+    const [enabled, setEnabled] = useState(true);
   return (
     <header className="py-[20px] bg-[#2E3741] flex items-center justify-between px-6">
       <div className="flex items-center gap-6">
@@ -18,27 +26,50 @@ export default function Header({ title, extra }: HeaderProps) {
       </div>
 
       <div className="flex items-center gap-3">
-        <button className="px-3 py-1 bg-gray-700 rounded text-sm">
-          Dars jadvali
-        </button>
-
-        <div className="flex items-center bg-gray-700 rounded px-2">
-          <span className="text-yellow-400">☀️</span>
-          <input type="checkbox" className="mx-1" />
-          <span className="text-blue-400">🌙</span>
+        <div className="px-[15px] py-[13px] bg-[#37414C] rounded flex items-center gap-2">
+          <CalendarDays width={15} height={15} className="text-[#FFFFFF]" />
+          <button className="text-[16px]/[21px]">Dars jadvali</button>
         </div>
 
-        <select className="bg-gray-700 px-2 py-1 rounded text-sm">
-          <option>O'zbekcha</option>
-          <option>Русский</option>
-          <option>English</option>
-        </select>
+        <div className="bg-[#475360] p-[15px] rounded flex items-center gap-2 text-sm">
+          <Sun width={16} height={16} className="text-[#FFC000]" />
+          <button
+            onClick={() => setEnabled(!enabled)}
+            className={`relative inline-flex h-[20px] w-[40px] items-center rounded-full transition-colors ${
+              enabled ? "bg-[#0095FF]" : "bg-gray-400"
+            }`}
+          >
+            <span
+              className={`inline-block h-[16px] w-[16px] transform rounded-full bg-white transition-transform ${
+                enabled ? "translate-x-[20px]" : "translate-x-[2px]"
+              }`}
+            />
+          </button>
+          <Moon width={16} height={16} className="text-[#0095FF]" />
+        </div>
 
-        <button className="px-3 py-1 bg-gray-700 rounded text-sm">Filtr</button>
+        <div className="bg-[#475360] px-[15px] py-[11px] rounded flex items-center gap-2 text-sm ">
+          <img src={uzb} alt="" />
+          <select className="">
+            <option>O'zbekcha</option>
+            <option>Русский</option>
+            <option>English</option>
+          </select>
+        </div>
 
-        <button className="px-3 py-1 bg-blue-600 rounded text-sm">
-          Export
-        </button>
+        <div className="px-[15px] py-[13px] bg-[#475360] rounded flex items-center gap-2">
+          <SlidersHorizontal
+            width={15}
+            height={15}
+            className="text-[#AAC0D8]"
+          />
+          <button className="text-[16px]/[21px]">Filtr</button>
+        </div>
+
+        <div className="px-[15px] py-[13px] bg-[#0095FF] rounded flex items-center gap-2">
+          <FileInput width={15} height={15} className="text-[#FFFFFF]" />
+          <button className="text-[16px]/[21px]">Export</button>
+        </div>
       </div>
     </header>
   );

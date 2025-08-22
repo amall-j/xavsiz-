@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 const menu = [
-  { path: "/statistics", icon: AudioLines, label: "Statistika" },
+  { path: "/", icon: AudioLines, label: "Statistika" },
   { path: "/kpi", icon: ChartNoAxesColumn, label: "KPI Baholash" },
   { path: "/students", icon: GraduationCap, label: "Talabalar" },
   { path: "/employees", icon: Users, label: "Hodimlar" },
