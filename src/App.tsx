@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 
-import Login from "./pages/login/Login";
+import Login from "./pages/Login/Login";
+import Statistika from "./pages/Statistic/Statistic";
 
 function DashboardLayout({
   title,
@@ -42,6 +43,15 @@ export default function App() {
             <PublicLayout>
               <Login />
             </PublicLayout>
+          }
+        />
+
+         <Route
+          path="/"
+          element={
+            <DashboardLayout title="Statistika">
+              <Statistika />
+            </DashboardLayout>
           }
         />
 
