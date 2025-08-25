@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import Login from "./pages/Login/Login";
 import Statistika from "./pages/Statistic/Statistic";
 import KPI from "./pages/Kpi/Kpi";
+import UniversityDetail from "./pages/Statistic/components/UniversityDetail";
+import UniversityDetailStat from "./pages/Statistic/components/UniversityDetailStat";
 
 function DashboardLayout({
   title,
@@ -16,7 +18,7 @@ function DashboardLayout({
   extra?: React.ReactNode;
 }) {
   return (
-    <div className="flex  bg-[#151B21] text-white">
+    <div className="flex h-screen  bg-[#151B21] text-white">
       <Sidebar />
       <div className="flex-1 flex flex-col">
         <Header title={title} extra={extra} />
@@ -27,11 +29,7 @@ function DashboardLayout({
 }
 
 function PublicLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="">
-      {children}
-    </div>
-  );
+  return <div className="">{children}</div>;
 }
 
 export default function App() {
@@ -47,7 +45,7 @@ export default function App() {
           }
         />
 
-         <Route
+        <Route
           path="/"
           element={
             <DashboardLayout title="Statistika">
@@ -56,7 +54,7 @@ export default function App() {
           }
         />
 
-         <Route
+        <Route
           path="/kpi"
           element={
             <DashboardLayout title="KPI Baholash">
@@ -66,6 +64,21 @@ export default function App() {
         />
 
        
+        {/* Universitet detail */}
+        <Route
+          path="/university/:id"
+          element={
+            <DashboardLayout title="University Detail">
+              <UniversityDetail />
+            </DashboardLayout>
+          }
+        >
+          {/* Nested route → xizmatlar */}
+          <Route
+            path="services/:serviceId"
+            element={<UniversityDetailStat />}
+          />
+        </Route>
       </Routes>
     </Router>
   );

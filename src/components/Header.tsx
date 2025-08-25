@@ -14,7 +14,7 @@ type HeaderProps = {
 };
 
 export default function Header({ title, extra }: HeaderProps) {
-    const [enabled, setEnabled] = useState(true);
+  const [enabled, setEnabled] = useState(true);
   return (
     <header className="py-[20px] bg-[#2E3741] flex items-center justify-between px-6">
       <div className="flex items-center gap-6">
