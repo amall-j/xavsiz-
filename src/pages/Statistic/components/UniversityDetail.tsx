@@ -27,16 +27,17 @@ export default function UniversityDetail() {
       </div>
 
       <div className="grid grid-cols-6 items-center gap-3">
-        <UniverServCard
-          id={1}
-          title="Talabalar hozirgi
-kayfiyati bo‘yicha"
-          img={DetIcon1}
-          number={6565}
-          mode="primary"
-        />
+        <div>
+          <UniverServCard
+            id={1}
+            title="Talabalar hozirgi
+          kayfiyati bo‘yicha"
+            img={DetIcon1}
+            number={6565}
+            mode="primary"
+          />
+        </div>
       </div>
     </div>
   );
 }
-// img, title, number ,numColor, id , mode

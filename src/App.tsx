@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 
-import Login from "./pages/Login/Login";
+// import Login from "./pages/Login/Login";
 import Statistika from "./pages/Statistic/Statistic";
 import KPI from "./pages/Kpi/Kpi";
 import UniversityDetail from "./pages/Statistic/components/UniversityDetail";
@@ -40,7 +40,8 @@ export default function App() {
           path="/login"
           element={
             <PublicLayout>
-              <Login />
+              {/* <Login /> */}
+              <h1>login</h1>
             </PublicLayout>
           }
         />

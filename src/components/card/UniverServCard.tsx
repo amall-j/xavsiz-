@@ -7,6 +7,12 @@ interface UniverServCardProps {
   mode?: "primary" | "secondary"; // qo'shimcha variantlar ham bo'lishi mumkin
 }
 
+// const UniverServData=[
+//   {
+//     id:1,
+//     title:""
+//   }
+// ]
 export default function UniverServCard({
   id,
   img,
