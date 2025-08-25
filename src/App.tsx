@@ -1,65 +1,8 @@
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Sidebar from "./components/Sidebar";
-// import Header from "./components/Header";
-
-// import Login from "./pages/Login/Login";
-// import Statistika from "./pages/Statistic/Statistic";
-
-// function DashboardLayout({
-//   title,
-//   children,
-//   extra,
-// }: {
-//   title: string;
-//   children: React.ReactNode;
-//   extra?: React.ReactNode;
-// }) {
-//   return (
-//     <div className="flex h-screen  bg-[#151B21] text-white">
-//       <Sidebar />
-//       <div className="flex-1 flex flex-col overflow-hidden">
-//         <Header title={title} extra={extra} />
-//         {/* <main className="flex-1 py-6 container">{children}</main> bilol aka  */}
-//         <main className="flex-1 py-6 px-6">{children}</main>
-//       </div>
-//     </div>
-//   );
-// }
-
-// function PublicLayout({ children }: { children: React.ReactNode }) {
-//   return <div className="">{children}</div>;
-// }
-
-// export default function App() {
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route
-//           path="/login"
-//           element={
-//             <PublicLayout>
-//               <Login />
-//             </PublicLayout>
-//           }
-//         />
-
-//         <Route
-//           path="/"
-//           element={
-//             <DashboardLayout title="Statistika">
-//               <Statistika />
-//             </DashboardLayout>
-//           }
-//         />
-//       </Routes>
-//     </Router>
-//   );
-// }
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 
-import Login from "./pages/Login/Login";
+// import Login from "./pages/Login/Login";
 import Statistika from "./pages/Statistic/Statistic";
 import UniversityDetail from "./pages/Statistic/components/UniversityDetail";
 import UniversityDetailStat from "./pages/Statistic/components/UniversityDetailStat";
@@ -97,7 +40,8 @@ export default function App() {
           path="/login"
           element={
             <PublicLayout>
-              <Login />
+              {/* <Login /> */}
+              <h1>login</h1>
             </PublicLayout>
           }
         />

@@ -96,6 +96,22 @@ export const universities = [
     adress: "Toshkent shahri, Yunusobod tumani",
     region: "Toshkent",
   },
+  {
+    id: 3,
+    icon: <Building2 size={30} />,
+    studentCount: 32732,
+    title: "O'zbekiston Milliy universiteti",
+    adress: "Toshkent shahri, Olmazor tumani",
+    region: "Toshkent",
+  },
+  {
+    id: 4,
+    icon: <Building2 size={30} />,
+    studentCount: 21500,
+    title: "Toshkent Davlat Texnika universiteti",
+    adress: "Toshkent shahri, Yunusobod tumani",
+    region: "Toshkent",
+  },
 ];
 
 export default function Statistika() {
