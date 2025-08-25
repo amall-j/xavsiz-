@@ -4,36 +4,38 @@ interface UniverServCardProps {
   title: string;
   number: number;
   numColor?: string;
-  mode?: "primary" | "secondary"; // qo'shimcha variantlar ham bo'lishi mumkin
+  mode?: "primary" | "secondary";
 }
 
-// const UniverServData=[
-//   {
-//     id:1,
-//     title:""
-//   }
-// ]
 export default function UniverServCard({
   id,
   img,
   title,
   number,
-  numColor = "text-white",
+  numColor = "text-",
   mode = "primary",
 }: UniverServCardProps) {
   const modeClass = {
-    primary: "flex flex-wrap",
+    primary: "",
     secondary: "",
   }[mode];
 
   return (
     <div
       key={id}
-      className={`rounded-2xl shadow-md p-5  cursor-pointer transition bg-[#2E3741] ${modeClass}`}
+      className={`rounded-2xl shadow-md p-5 flex flex-col cursor-pointer transition bg-[#2E3741] ${modeClass}`}
     >
-      <img src={img} alt={title} className="w-8 h-8 object-contain mb-3" />
-      <h3 className=" text-[14px] font-medium mb-2">{title}</h3>
-      <p className={`text-2xl font-bold ${numColor}`}>{number}</p>
+      <div className="grid grid-cols-3 items-center ">
+        <img
+          src={img}
+          alt=""
+          className=" col-span-1   w-15 h-20 object-contain mb-3"
+        />
+        <h3 className="col-span-2 text-[16px] text-[#8EA1B6]  font-medium mb-2">
+          {title}
+        </h3>
+      </div>
+      <p className={`text-[24px] font-medium mt-6 ${numColor}`}>{number}</p>
     </div>
   );
 }
