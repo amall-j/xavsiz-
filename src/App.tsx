@@ -4,6 +4,7 @@ import Header from "./components/Header";
 
 import Login from "./pages/Login/Login";
 import Statistika from "./pages/Statistic/Statistic";
+import KPI from "./pages/Kpi/Kpi";
 
 function DashboardLayout({
   title,
@@ -15,9 +16,9 @@ function DashboardLayout({
   extra?: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen bg-[#151B21] text-white">
+    <div className="flex  bg-[#151B21] text-white">
       <Sidebar />
-      <div className="flex-1 flex flex-col overflow-hidden">
+      <div className="flex-1 flex flex-col">
         <Header title={title} extra={extra} />
         <main className="flex-1 py-6 container">{children}</main>
       </div>
@@ -51,6 +52,15 @@ export default function App() {
           element={
             <DashboardLayout title="Statistika">
               <Statistika />
+            </DashboardLayout>
+          }
+        />
+
+         <Route
+          path="/kpi"
+          element={
+            <DashboardLayout title="KPI Baholash">
+              <KPI/>
             </DashboardLayout>
           }
         />
