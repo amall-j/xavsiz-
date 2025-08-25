@@ -1,4 +1,4 @@
-import { LoginBg, FingerIcon } from "../../assets";
+import { LoginBg } from "../../assets";
 import FaceIcon from "../../assets/FaceIcon";
 import PalesIocn from "../../assets/PalesIcon";
 

@@ -23,7 +23,7 @@ export default function Sidebar() {
   const location = useLocation();
 
   return (
-    <aside className="w-[90px] bg-[#2E3741] flex flex-col justify-between items-center py-4 border-r border-[#2A323B]">
+    <aside className="w-[90px] bg-[#2E3741] flex flex-col justify-between items-center py-4 border-r border-[#2A323B] h-screen">
       <div className="w-[50px] h-[50px] bg-[#37414C] rounded-full flex items-center justify-center text-white font-bold mb-4">
         <img src={student} alt="" />
       </div>
@@ -31,15 +31,17 @@ export default function Sidebar() {
       <nav className="flex flex-col gap-6 flex-1 mt-6">
         {menu.map((item) => {
           const Icon = item.icon;
-          const isActive = location.pathname.startsWith(item.path);
+          const isActive =
+            item.path === "/"
+              ? location.pathname === "/"
+              : location.pathname.startsWith(item.path);
+
           return (
             <Link
               key={item.path}
               to={item.path}
               className={`flex items-center justify-center w-[50px] h-[50px] rounded-md transition-colors ${
-                isActive
-                  ? "bg-[#1F242F]"
-                  : "hover:bg-gray-700"
+                isActive ? "bg-[#1F242F]" : "hover:bg-gray-700"
               }`}
             >
               <Icon

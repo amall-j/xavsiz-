@@ -14,7 +14,7 @@ type HeaderProps = {
 };
 
 export default function Header({ title, extra }: HeaderProps) {
-    const [enabled, setEnabled] = useState(true);
+  const [enabled, setEnabled] = useState(true);
   return (
     <header className="py-[20px] bg-[#2E3741] flex items-center justify-between px-6">
       <div className="flex items-center gap-6">
@@ -31,7 +31,7 @@ export default function Header({ title, extra }: HeaderProps) {
           <button className="text-[16px]/[21px]">Dars jadvali</button>
         </div>
 
-        <div className="bg-[#475360] p-[15px] rounded flex items-center gap-2 text-sm">
+        <div className="bg-[#475360] p-[15px] py-[14px] rounded flex items-center gap-2 text-sm">
           <Sun width={16} height={16} className="text-[#FFC000]" />
           <button
             onClick={() => setEnabled(!enabled)}
