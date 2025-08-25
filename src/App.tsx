@@ -22,7 +22,7 @@ function DashboardLayout({
       <Sidebar />
       <div className="flex-1 flex flex-col">
         <Header title={title} extra={extra} />
-        <main className="flex-1 py-6 container">{children}</main>
+        <main className="flex-1 py-6 px-6">{children}</main>
       </div>
     </div>
   );
@@ -59,13 +59,11 @@ export default function App() {
           path="/kpi"
           element={
             <DashboardLayout title="KPI Baholash">
-              <KPI/>
+              <KPI />
             </DashboardLayout>
           }
         />
 
-       
-        {/* Universitet detail */}
         <Route
           path="/university/:id"
           element={
@@ -73,13 +71,16 @@ export default function App() {
               <UniversityDetail />
             </DashboardLayout>
           }
-        >
-          {/* Nested route → xizmatlar */}
-          <Route
-            path="services/:serviceId"
-            element={<UniversityDetailStat />}
-          />
-        </Route>
+        />
+
+        <Route
+          path="/university/:id/services/:serviceId"
+          element={
+            <DashboardLayout title="Service Detail">
+              <UniversityDetailStat />
+            </DashboardLayout>
+          }
+        />
       </Routes>
     </Router>
   );
