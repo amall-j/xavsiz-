@@ -7,6 +7,7 @@ import Statistika from "./pages/Statistic/Statistic";
 import KPI from "./pages/Kpi/Kpi";
 import UniversityDetail from "./pages/Statistic/components/UniversityDetail";
 import UniversityDetailStat from "./pages/Statistic/components/univerDetailing pages/UniversityDetailStat";
+import Login from "./pages/Login/Login";
 
 function DashboardLayout({
   title,
@@ -18,9 +19,9 @@ function DashboardLayout({
   extra?: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen  bg-[#151B21] text-white">
+    <div className="h-screen  bg-[#151B21] text-white">
       <Sidebar />
-      <div className="flex-1 flex flex-col">
+      <div className="ml-[90px] flex flex-col">
         <Header title={title} extra={extra} />
         <main className="flex-1 py-6 px-6 container">{children}</main>
       </div>
@@ -40,8 +41,7 @@ export default function App() {
           path="/login"
           element={
             <PublicLayout>
-              {/* <Login /> */}
-              <h1>login</h1>
+              <Login />
             </PublicLayout>
           }
         />

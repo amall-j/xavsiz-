@@ -1,5 +1,5 @@
 import { ChevronRight } from "lucide-react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { DetIcon1, Go, PoliceIcon } from "../../../assets";
 import UniverServCard from "../../../components/card/UniverServCard";
 const universityDashboard = [

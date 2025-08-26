@@ -24,7 +24,7 @@ import {
 
 export default function KPI() {
   return (
-    <div className="h-screen container w-full pb-4">
+    <div className="h-screen w-full pb-4">
       <div className="flex items-center justify-between gap-4">
         <KPICard
           icon={<CalendarClock />}

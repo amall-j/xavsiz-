@@ -135,7 +135,7 @@ export default function Statistika() {
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-6 w-full px-2 py-5">
+      <div className="grid grid-cols-3 gap-6 w-full py-5">
         {filteredUniversities.map((uni) => (
           <div key={uni.id} className="cursor-pointer">
             <Link
