@@ -23,7 +23,7 @@ export default function Sidebar() {
   const location = useLocation();
 
   return (
-    <aside className="w-[90px] bg-[#2E3741] flex flex-col justify-between items-center py-4 border-r border-[#2A323B] h-screen">
+    <aside className="fixed top-0 left-0 w-[90px] bg-[#2E3741] flex flex-col justify-between items-center py-4 border-r border-[#2A323B] h-screen">
       <div className="w-[50px] h-[50px] bg-[#37414C] rounded-full flex items-center justify-center text-white font-bold mb-4">
         <img src={student} alt="" />
       </div>

@@ -10,7 +10,7 @@ const PieChart = () => {
       {
         data: [100, 0],
         backgroundColor: ["#A4E36D", "#2E3741"],
-        borderWidth: 0, 
+        borderWidth: 0,
       },
     ],
   };
