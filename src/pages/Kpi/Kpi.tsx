@@ -4,6 +4,7 @@ import { Calendar1, CalendarCheck2, CalendarClock } from "lucide-react";
 import img from "../../assets/kpi.svg";
 import map from "../../assets/map.png";
 import decrease from "../../assets/decrease.svg";
+import { good, bad } from "../../assets";
 
 // Components
 import KPICard from "../../components/forKPI/KpiCard";
@@ -21,6 +22,8 @@ import {
   leftCards,
   rightCards,
 } from "../../mockData/data.kpi";
+import { goodInspektros, badInspektros } from "../../mockData/data.kpiTable";
+import { CustomTable } from "../../components/Table";
 
 export default function KPI() {
   return (
@@ -164,6 +167,86 @@ export default function KPI() {
               index={item.index}
             />
           ))}
+        </div>
+      </div>
+
+      <div className="w-full flex gap-[20px] mt-[35px]">
+        <div className="bg-[#37414C] py-[20px] px-[32px] rounded-[12px]">
+          <div className="flex items-center gap-3 mb-[25px] mt-[10px]">
+            <img src={good} alt="" />
+            <h2 className="text-[#FFFFFF font-medium text-[20px]">
+              Top-10 ilg’or profilaktika inspektorlar
+            </h2>
+          </div>
+
+          <CustomTable
+            columns={[
+              { key: "№", title: "№", align: "center", width: "w-1/12" },
+              { key: "Rasm", title: "Rasm", align: "center" },
+              { key: "F.I.SH", title: "F.I.Sh", align: "center" },
+              {
+                key: "Universitet nomi",
+                title: "Universitet nomi",
+                align: "center",
+              },
+              { key: "Tel.raqam", title: "Tel.raqam", align: "center" },
+            ]}
+            data={goodInspektros.map((item, index) => ({
+              ...item,
+              id: index + 1,
+              Rasm: (
+                <img
+                  src={item.Rasm}
+                  alt={item["F.I.SH"]}
+                  className="w-12 h-12 rounded-[12px]"
+                />
+              ),
+            }))}
+            striped
+            showPagination
+            currentPage={1}
+            totalPages={1}
+            onPageChange={(page) => console.log("Page changed to:", page)}
+          />
+        </div>
+
+        <div className="bg-[#37414C] py-[20px] px-[32px] rounded-[12px] ">
+          <div className="flex items-center gap-3 mb-[25px] mt-[10px]">
+            <img src={bad} alt="" />
+            <h2 className="text-[#FFFFFF font-medium text-[20px]">
+              Top-10 past ko’rsatkichli profilaktika Inspektorlar
+            </h2>
+          </div>
+
+          <CustomTable
+            columns={[
+              { key: "№", title: "№", align: "center", width: "w-1/12" },
+              { key: "Rasm", title: "Rasm", align: "center" },
+              { key: "F.I.SH", title: "F.I.Sh", align: "center" },
+              {
+                key: "Universitet nomi",
+                title: "Universitet nomi",
+                align: "center",
+              },
+              { key: "Tel.raqam", title: "Tel.raqam", align: "center" },
+            ]}
+            data={badInspektros.map((item, index) => ({
+              ...item,
+              id: index + 1,
+              Rasm: (
+                <img
+                  src={item.Rasm}
+                  alt={item["F.I.SH"]}
+                  className="w-12 h-12 rounded-[12px]"
+                />
+              ),
+            }))}
+            striped
+            showPagination
+            currentPage={1}
+            totalPages={1}
+            onPageChange={(page) => console.log("Page changed to:", page)}
+          />
         </div>
       </div>
     </div>
