@@ -5,7 +5,6 @@ import {
   tashqikurinish1,
   tashqikurinish2,
 } from "../../../../mockData/data.statistika";
-import { faceMood1, Maskasvg } from "../../../../assets";
 
 export default function Studentappearance() {
   return (
@@ -50,7 +49,7 @@ export default function Studentappearance() {
         {tashqikurinish2.map((item, index) => (
           <div
             key={index}
-            className={`rounded-2xl shadow-md  p-5 flex flex-col gap-4    bg-[#2E3741] `}
+            className={`rounded-2xl shadow-md  p-10 flex flex-col gap-4    bg-[#2E3741] `}
           >
             <div className="flex items-start justify-between">
               <span className="flex items-center gap-4">
