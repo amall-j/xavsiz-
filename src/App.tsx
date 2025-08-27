@@ -7,9 +7,8 @@ import Statistika from "./pages/Statistic/Statistic";
 import KPI from "./pages/Kpi/Kpi";
 import UniversityDetail from "./pages/Statistic/components/UniversityDetail";
 import UniversityDetailStat from "./pages/Statistic/components/univerDetailing pages/StudentMood";
-import Login from "./pages/login/Login";
 import Studentappearance from "./pages/Statistic/components/univerDetailing pages/Studentappearance";
-// import Login from "./pages/Login/Login";
+import Login from "./pages/Login/Login";
 
 function DashboardLayout({
   title,
