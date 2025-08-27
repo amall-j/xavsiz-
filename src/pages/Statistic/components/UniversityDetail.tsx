@@ -15,26 +15,42 @@ import UniverServCard from "../../../components/card/UniverServCard";
 import CustomSelect from "../../../components/RegionSelect";
 import { useState } from "react";
 import { Building2, CalendarDays } from "lucide-react";
+import Breadcrumb from "../../../components/BreadCrumb";
 const universityDashboard = [
-  { id: 1, title: "Talabalar soni", icon: DetIcon1, number: 6236 },
+  {
+    id: 1,
+    title: "Talabalar hozirgi kayfiyati bo‘yicha",
+    icon: DetIcon1,
+    number: 6236,
+    link: "/university/:id/studentsmood",
+  },
   {
     id: 2,
     title: "Dars vaqtida masjidga chiqqan talabalar",
     icon: DetIcon1,
     number: 5,
+    link: "",
   },
-  { id: 3, title: "Odamlar gavjumligi", icon: DetIcon1, number: 2 },
-  { id: 4, title: "Janjallar va mushtlashuvlar", icon: DetIcon1, number: 2 },
+  { id: 3, title: "Odamlar gavjumligi", icon: DetIcon1, number: 2, link: "" },
+  {
+    id: 4,
+    title: "Janjallar va mushtlashuvlar",
+    icon: DetIcon1,
+    number: 2,
+    link: "",
+  },
   {
     id: 5,
     title: "OTM hududiga kirgan begona shaxslar",
     icon: DetIcon1,
     number: 91,
+    link: "",
   },
   {
     id: 6,
     title: "Talabalar tashqi ko‘rinishi bo‘yicha",
     icon: DetIcon1,
+    link: "",
     number: 54,
   },
   {
@@ -42,30 +58,35 @@ const universityDashboard = [
     title: "Darsga 5 va undan ortiq kun kelmagan talabalar",
     icon: DetIcon1,
     number: 8,
+    link: "",
   },
   {
     id: 8,
     title: "Kampus hududida topilmagan talabalar",
     icon: DetIcon1,
     number: 1,
+    link: "",
   },
   {
     id: 9,
     title: "Yotoqxonada begona odamlarning bo‘lishi",
     icon: DetIcon1,
     number: 0,
+    link: "",
   },
   {
     id: 10,
     title: "Hodisa bo‘yicha ko‘rilgan chora-tadbirlar",
     icon: DetIcon1,
     number: 3712,
+    link: "",
   },
-  { id: 11, title: "Umumiy talaba", icon: DetIcon1, number: 50391 },
-  { id: 12, title: "O‘qituvchilar", icon: DetIcon1, number: 11235 },
+  { id: 11, title: "Umumiy talaba", icon: DetIcon1, link: "", number: 50391 },
+  { id: 12, title: "O‘qituvchilar", link: "", icon: DetIcon1, number: 11235 },
   {
     id: 13,
     title: "Chet elga chiqib ketgan talabalar",
+    link: "",
     icon: DetIcon1,
     number: 626,
   },
@@ -74,24 +95,28 @@ const universityDashboard = [
     title: "Uzoq muddatli ta’tilga chiqqan talabalar",
     icon: DetIcon1,
     number: 329,
+    link: "",
   },
   {
     id: 15,
     title: "Ijara sharoitida yashayotgan talabalar",
     icon: DetIcon1,
     number: 8587,
+    link: "",
   },
   {
     id: 16,
     title: "Yotoqxonada yashayotgan talabalar",
     icon: DetIcon1,
     number: 8885,
+    link: "",
   },
   {
     id: 17,
     title: "Tarixiy hududlarda yashayotgan talabalar",
     icon: DetIcon1,
     number: 112,
+    link: "",
   },
   {
     id: 18,
@@ -135,6 +160,7 @@ const OffensStudents = [
     number: 3,
   },
 ];
+
 export default function UniversityDetail() {
   const location = useLocation();
   const { title } = location.state || {};
@@ -144,16 +170,19 @@ export default function UniversityDetail() {
   return (
     <div className="flex flex-col gap-4">
       {/* Header */}
-      <div className="flex justify-between bg-[#2E3741] p-4 rounded-lg">
-        <div>
-          <p className="text-sm text-[#AAC0D8]">Dashboard / Universitet</p>
-          <h1 className="text-[20px] font-bold text-white">{title}</h1>
-        </div>
+      <div className="flex flex-col bg-[#2E3741] p-4 rounded-lg">
+        <Breadcrumb
+          items={[
+            { title: "Dashboard", link: "/" },
+            { title: "Universitet", link: "" },
+          ]}
+        />
+        <h1 className="text-[25px] font-bold text-white">{title}</h1>
       </div>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-6 gap-4">
         {/* Chap taraf (2 qatorli gridlar) */}
-        <div className="col-span-3 flex flex-col gap-4">
+        <div className="col-span-5 flex flex-col gap-4">
           {/* 1-qator */}
           <div className="grid grid-cols-5 gap-4">
             {universityDashboard.slice(0, 5).map((item) => (
@@ -164,6 +193,7 @@ export default function UniversityDetail() {
                 img={item.icon}
                 number={item.number}
                 mode="primary"
+                link={item.link}
               />
             ))}
           </div>
@@ -179,18 +209,27 @@ export default function UniversityDetail() {
                 img={item.icon}
                 number={item.number}
                 mode="primary"
+                link={item.link}
               />
             ))}
 
             {/* 2 ta joyni egallovchi card */}
             <div className="col-span-2 h-full  flex ">
-              <UniverServCard
-                id={999}
-                title="Yotoqxonada begona odamlarning bo‘lishi"
-                img={universityDashboard[8].icon}
-                number={universityDashboard[8].number}
-                mode="primary"
-              />
+              <div
+                className={`rounded-2xl shadow-md hover:shadow-lg hover:scale-[1.02] p-5 flex justify-start flex-col w-full cursor-pointer transition bg-[#2E3741] `}
+              >
+                <div className="flex  gap-4  items-center ">
+                  <img
+                    src={DetIcon1}
+                    alt=""
+                    className=" col-span-1   w-15 h-20 object-contain mb-3"
+                  />
+                  <h3 className="col-span-2 text-[20px] text-[#8EA1B6]  font-medium mb-2">
+                    Yotoqxonada begona odamlarning bo‘lishi
+                  </h3>
+                </div>
+                <p className={`text-[24px] font-medium mt-6 `}>123</p>
+              </div>
             </div>
           </div>
         </div>
@@ -201,10 +240,10 @@ export default function UniversityDetail() {
             <img
               src={universityDashboard[9].icon}
               alt=""
-              className="col-span-1 w-35 h-35 object-contain mb-3"
+              className=" w-30 h-30 object-contain mb-3"
             />
-            <h3 className="col-span-2 text-[18px] text-[#8EA1B6] font-medium mb-2">
-              O‘ngdagi katta card
+            <h3 className=" text-[18px] text-[#8EA1B6] font-medium mb-2">
+              Hodisa bo‘yicha ko‘rilgan chora-tadbirlar
             </h3>
           </div>
           <p className="text-[45px] font-semibold mt-12 text-white">
@@ -327,7 +366,6 @@ export default function UniversityDetail() {
       </div>
       <div className="grid grid-cols-3 gap-8">
         <div>
-          llll{" "}
           <div
             className={`rounded-2xl shadow-md p-5 flex gap-10 cursor-pointer transition bg-[#2E3741] `}
           >

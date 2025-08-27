@@ -6,8 +6,10 @@ import Header from "./components/Header";
 import Statistika from "./pages/Statistic/Statistic";
 import KPI from "./pages/Kpi/Kpi";
 import UniversityDetail from "./pages/Statistic/components/UniversityDetail";
-import UniversityDetailStat from "./pages/Statistic/components/univerDetailing pages/UniversityDetailStat";
-import Login from "./pages/Login/Login";
+import UniversityDetailStat from "./pages/Statistic/components/univerDetailing pages/StudentMood";
+import Login from "./pages/login/Login";
+import Studentappearance from "./pages/Statistic/components/univerDetailing pages/Studentappearance";
+// import Login from "./pages/Login/Login";
 
 function DashboardLayout({
   title,
@@ -67,17 +69,25 @@ export default function App() {
         <Route
           path="/university/:id"
           element={
-            <DashboardLayout title="University Detail">
+            <DashboardLayout title="Statistika">
               <UniversityDetail />
             </DashboardLayout>
           }
         />
 
         <Route
-          path="/university/:id/services/:serviceId"
+          path="/university/:id/studentsmood"
           element={
-            <DashboardLayout title="Service Detail">
+            <DashboardLayout title="Statistika">
               <UniversityDetailStat />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/university/:id/appearance"
+          element={
+            <DashboardLayout title="Statistika">
+              <Studentappearance />
             </DashboardLayout>
           }
         />

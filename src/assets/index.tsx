@@ -10,13 +10,21 @@ import offenbicon4 from "./offenbicon4.svg";
 import offenbicon5 from "./offenbicon5.svg";
 import yoshlar from "./SVG (1).svg";
 import talaba from "./talab.svg";
+import faceMood1 from "./faceMood1.jpg";
+import faceMood2 from "./faceMood2.jpg";
+import iconMood1 from "./iconMood1.svg";
+import MoodLoading from "./Studen loading.svg";
 export {
   LoginBg,
   DetIcon1,
+  faceMood1,
+  MoodLoading,
+  faceMood2,
   PoliceIcon,
   yoshlar,
   talaba,
   Go,
+  iconMood1,
   Sxema,
   offenbicon1,
   offenbicon2,
