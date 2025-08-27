@@ -14,10 +14,21 @@ import faceMood1 from "./faceMood1.jpg";
 import faceMood2 from "./faceMood2.jpg";
 import iconMood1 from "./iconMood1.svg";
 import MoodLoading from "./Studen loading.svg";
+import Apperance from "./apperance.svg";
+import Hijab from "./hijab.svg";
+import Soqol from "./soqol.svg";
+import Maska from "./maska.svg";
+import Maskasvg from "./maskasvg.svg";
+
 export {
   LoginBg,
   DetIcon1,
+  Apperance,
   faceMood1,
+  Hijab,
+  Maskasvg,
+  Soqol,
+  Maska,
   MoodLoading,
   faceMood2,
   PoliceIcon,

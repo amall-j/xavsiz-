@@ -449,12 +449,7 @@ export default function UniversityDetailStat() {
           </Link>
         </span>
         <div>
-          <Breadcrumb
-            items={[
-              { title: "Dashboard", link: "/" },
-              { title: "Talabaning kayfiyati", link: "" },
-            ]}
-          />
+          <Breadcrumb items={[{ title: "Talabaning kayfiyati", link: "" }]} />
           <h1 className="text-[25px] font-bold text-white">
             Talabalar hozirgi kayfiyati bo‘yicha maulmotlar
           </h1>
