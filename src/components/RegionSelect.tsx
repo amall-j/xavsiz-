@@ -46,11 +46,17 @@ export default function CustomSelect({
         onChange={handleChange}
         displayEmpty
         renderValue={(selected) => (
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+            }}
+          >
             {icon} {selected || placeholder}
           </div>
         )}
-        sx={{ color: "white" }}
+        sx={{ color: "gray" }}
       >
         <MenuItem value="">
           <em>{placeholder}</em>

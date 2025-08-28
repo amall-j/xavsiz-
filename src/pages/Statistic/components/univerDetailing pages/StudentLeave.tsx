@@ -1,8 +1,7 @@
 import { ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../../../../components/BreadCrumb";
-import { CustomTable } from "../../../../components/Table";
-import StudentTablePage from "../../../../components/StudentTablePage";
+import StudentTablePage from "../../../../components/StudentLeaveTablePage";
 
 export default function StudentLeave() {
   return (
