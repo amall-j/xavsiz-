@@ -5,7 +5,6 @@ import {
   tashqikurinish1,
   tashqikurinish2,
 } from "../../../../mockData/data.statistika";
-import { faceMood1, Maskasvg } from "../../../../assets";
 
 export default function Studentappearance() {
   return (

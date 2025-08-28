@@ -2,7 +2,6 @@ import {
   Apperance,
   DetIcon1,
   faceMood1,
-  faceMood2,
   Hijab,
   Maska,
   Maskasvg,
