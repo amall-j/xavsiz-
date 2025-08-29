@@ -2,7 +2,7 @@ import { Building2, MapPin } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import UniversCard from "../../components/card/UniversCard";
-import CustomSelect from "../../components/RegionSelect";
+import CustomSelect from "../../components/CustumSelect";
 
 export const universities = [
   {

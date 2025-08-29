@@ -4,9 +4,12 @@ import { CustomTable } from "./Table";
 import StudentModal from "../modal/StudentModal";
 import { ArrowUpRight, CalendarClock } from "lucide-react";
 import { usersSvg } from "../assets";
+import ProfilaktikaModal from "../modal/ProfilaktikaModal";
 
 export default function StudentTablePage() {
   const [showModal, setShowModal] = useState(false);
+  const [showProfilaktika, setShowProfilaktika] = useState(false);
+  const [slectRow, setSeletRow] = useState<any>(null);
 
   const columns: Column[] = [
     {
@@ -73,12 +76,16 @@ export default function StudentTablePage() {
       title: "Profilaktika",
       align: "center",
       render: (value: string, row: any) => (
-        <Link to={`/profilaktika/${row.id}`}>
-          <p className="bg-[#37414C] text-white py-1.5 mx-auto  px-3 text-center rounded-[8px] justify-center gap-1 flex items-center">
-            {value}
-            <ArrowUpRight size={18} className="text-[#AAC0D8] font-bold" />
-          </p>
-        </Link>
+        <p
+          onClick={() => {
+            setSeletRow(row);
+            setShowProfilaktika(true);
+          }}
+          className="bg-[#37414C] text-white py-1.5 mx-auto  px-3 text-center rounded-[8px] justify-center gap-1 flex items-center"
+        >
+          {value}
+          <ArrowUpRight size={18} className="text-[#AAC0D8] font-bold" />
+        </p>
       ),
     },
     { key: "jshshir", title: "JSHSHIR", align: "center" },
@@ -185,6 +192,12 @@ export default function StudentTablePage() {
           </button>
         </StudentModal>
       )}
+
+      <ProfilaktikaModal
+        isOpen={showProfilaktika}
+        onClose={() => setShowProfilaktika(false)}
+        data={slectRow}
+      />
     </div>
   );
 }

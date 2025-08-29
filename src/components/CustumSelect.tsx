@@ -10,6 +10,7 @@ type Props = {
   options: string[]; // tanlanadigan qiymatlar ro'yxati
   placeholder?: string; // hech narsa tanlanmagan paytda ko‘rinadigan matn
   icon?: ReactNode; // optional — MapPin yoki boshqa icon
+  className?: string; // qo‘shimcha class yozish uchun ixtiyoriy props
 };
 
 export default function CustomSelect({
@@ -18,6 +19,7 @@ export default function CustomSelect({
   options,
   placeholder = "Qiymat tanlang",
   icon,
+  className = "",
 }: Props) {
   const handleChange = (event: SelectChangeEvent) => {
     onChange(event.target.value);
@@ -40,6 +42,7 @@ export default function CustomSelect({
         },
       }}
       size="small"
+      className={className} // <-- qo‘shildi
     >
       <Select
         value={value}
@@ -52,6 +55,7 @@ export default function CustomSelect({
               alignItems: "center",
               gap: "8px",
             }}
+            className="text-gray-400"
           >
             {icon} {selected || placeholder}
           </div>
@@ -59,7 +63,7 @@ export default function CustomSelect({
         sx={{ color: "gray" }}
       >
         <MenuItem value="">
-          <em>{placeholder}</em>
+          <em className="">{placeholder}</em>
         </MenuItem>
         {options.map((opt, i) => (
           <MenuItem key={i} value={opt}>

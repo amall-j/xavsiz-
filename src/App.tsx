@@ -12,6 +12,7 @@ import Login from "./pages/Login/Login";
 import StudentMachit from "./pages/Statistic/components/univerDetailing pages/StudentMachit";
 import StudentLeave from "./pages/Statistic/components/univerDetailing pages/StudentLeave";
 import Event from "./pages/Event/Event";
+import Profilaktika from "./pages/Profilaktika/Profilaktika";
 
 function DashboardLayout({
   title,
@@ -114,6 +115,14 @@ export default function App() {
           element={
             <DashboardLayout title="Hodisalar">
               <Event />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/prevention"
+          element={
+            <DashboardLayout title="Hodisalar">
+              <Profilaktika />
             </DashboardLayout>
           }
         />
