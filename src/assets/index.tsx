@@ -28,10 +28,12 @@ import inspektor3 from "./inspector3.svg";
 import good from "./good.svg";
 import bad from "./bad.svg";
 import TableIcon from "./table icon.svg";
+import StudentImg from "./user3_4.jpg";
 
 export {
   LoginBg,
   MachitIcon,
+  StudentImg,
   TableIcon,
   DetIcon1,
   Apperance,
