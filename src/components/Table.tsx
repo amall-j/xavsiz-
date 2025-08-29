@@ -1,9 +1,10 @@
-import React from 'react';
+import { TableIcon } from "../assets";
+import React from "react";
 
 interface Column {
   key: string;
   title: string;
-  align?: 'left' | 'center' | 'right';
+  align?: "left" | "center" | "right";
   width?: string;
   render?: (value: any, row: any) => React.ReactNode;
 }
@@ -15,7 +16,11 @@ interface TableProps {
   className?: string;
   striped?: boolean;
   onRowClick?: (id: string | number) => void;
-  actions?: { label: string; onClick: (row: any) => void; variant?: 'primary' | 'secondary' }[];
+  actions?: {
+    label: string;
+    onClick: (row: any) => void;
+    variant?: "primary" | "secondary";
+  }[];
   showPagination?: boolean;
   currentPage?: number;
   totalPages?: number;
@@ -26,7 +31,7 @@ export function CustomTable({
   title,
   columns,
   data,
-  className = '',
+  className = "",
   striped = true,
   onRowClick,
   actions = [],
@@ -36,7 +41,9 @@ export function CustomTable({
   onPageChange,
 }: TableProps) {
   return (
-    <div className={`bg-[#1F242F] text-white rounded-lg shadow-md  ${className}`}>
+    <div
+      className={`bg-[#1F242F] text-white rounded-lg shadow-md  ${className}`}
+    >
       {title && (
         <div className="px-6 py-4">
           <h2 className="text-xl font-bold">{title}</h2>
@@ -46,20 +53,45 @@ export function CustomTable({
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
-            <tr className="bg-[#344363] text-gray-200">
+            <tr className="bg-[#344363] text-[#CACACA]">
               {columns.map((column) => (
                 <th
                   key={column.key}
-                  className={`px-4 py-3 text-center text-sm font-semibold ${
-                    column.width ? column.width : ''
+                  className={`px-4 py-3 text-[16px] font-semibold whitespace-nowrap ${
+                    column.width ? column.width : ""
                   } ${
-                    column.align === 'center' ? 'text-center' : column.align === 'right' ? 'text-right' : 'text-left'
+                    column.align === "center"
+                      ? "text-center"
+                      : column.align === "right"
+                      ? "text-right"
+                      : "text-left"
                   }`}
                 >
-                  {column.title}
+                  <div
+                    className={`flex items-center gap-2 ${
+                      column.align === "center"
+                        ? "justify-center"
+                        : column.align === "right"
+                        ? "justify-end"
+                        : "justify-start"
+                    }`}
+                  >
+                    <img
+                      src={TableIcon}
+                      alt="icon"
+                      className="w-4 h-4 shrink-0"
+                    />
+                    <span className="whitespace-nowrap text-[16px]">
+                      {column.title}
+                    </span>
+                  </div>
                 </th>
               ))}
-              {actions.length > 0 && <th className="px-4 py-3 text-sm font-semibold text-center bg-[#344363]">Действия</th>}
+              {actions.length > 0 && (
+                <th className="px-4 py-3 text-[16px] font-semibold text-center bg-[#344363] whitespace-nowrap">
+                  Действия
+                </th>
+              )}
             </tr>
           </thead>
 
@@ -70,21 +102,25 @@ export function CustomTable({
                   key={row.id}
                   onClick={() => onRowClick && onRowClick(row.id)}
                   className={`border-b border-gray-700 cursor-pointer ${
-                    striped && rowIndex % 2 === 0 ? 'bg-[#1F242F]' : 'bg-[#1F242F]' 
+                    striped && rowIndex % 2 === 0
+                      ? "bg-transparent"
+                      : "bg-[#1F242F]"
                   }`}
                 >
                   {columns.map((column) => (
                     <td
                       key={column.key}
                       className={`p-2 text-[#CACACA] text-[13px] ${
-                        column.align === 'center'
-                          ? 'text-center'
-                          : column.align === 'right'
-                          ? 'text-right'
-                          : 'text-left'
+                        column.align === "center"
+                          ? "text-center"
+                          : column.align === "right"
+                          ? "text-right"
+                          : "text-left"
                       }`}
                     >
-                      {column.render ? column.render(row[column.key], row) : row[column.key]}
+                      {column.render
+                        ? column.render(row[column.key], row)
+                        : row[column.key]}
                     </td>
                   ))}
                   {actions.length > 0 && (
@@ -97,9 +133,9 @@ export function CustomTable({
                             action.onClick(row);
                           }}
                           className={`px-3 py-1 rounded text-sm ${
-                            action.variant === 'primary'
-                              ? 'bg-blue-600 hover:bg-blue-700'
-                              : 'bg-orange-500 hover:bg-orange-600'
+                            action.variant === "primary"
+                              ? "bg-blue-600 hover:bg-blue-700"
+                              : "bg-orange-500 hover:bg-orange-600"
                           } text-white`}
                         >
                           {action.label}
@@ -111,7 +147,10 @@ export function CustomTable({
               ))
             ) : (
               <tr>
-                <td colSpan={columns.length + (actions.length > 0 ? 1 : 0)} className="text-center py-12">
+                <td
+                  colSpan={columns.length + (actions.length > 0 ? 1 : 0)}
+                  className="text-center py-12"
+                >
                   <div className="text-gray-400 mb-2">
                     <svg
                       className="w-12 h-12 mx-auto"

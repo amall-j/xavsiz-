@@ -9,6 +9,8 @@ import UniversityDetail from "./pages/Statistic/components/UniversityDetail";
 import UniversityDetailStat from "./pages/Statistic/components/univerDetailing pages/StudentMood";
 import Studentappearance from "./pages/Statistic/components/univerDetailing pages/Studentappearance";
 import Login from "./pages/Login/Login";
+import StudentMachit from "./pages/Statistic/components/univerDetailing pages/StudentMachit";
+import StudentLeave from "./pages/Statistic/components/univerDetailing pages/StudentLeave";
 
 function DashboardLayout({
   title,
@@ -87,6 +89,22 @@ export default function App() {
           element={
             <DashboardLayout title="Statistika">
               <Studentappearance />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/university/:id/mechet"
+          element={
+            <DashboardLayout title="Statistika">
+              <StudentMachit />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/university/:id/leave"
+          element={
+            <DashboardLayout title="Statistika">
+              <StudentLeave />
             </DashboardLayout>
           }
         />

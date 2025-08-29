@@ -19,18 +19,25 @@ import Hijab from "./hijab.svg";
 import Soqol from "./soqol.svg";
 import Maska from "./maska.svg";
 import Maskasvg from "./maskasvg.svg";
-
-import inspektor1 from './inspekor1.svg'
-import inspektor2 from './inspektor2.svg'
-import inspektor3 from './inspector3.svg'
-import good from './good.svg'
-import bad from './bad.svg'
+import usersSvg from "./usersSvg.svg";
+import MachitIcon from "./machitIcon.svg";
+import DarsQoldirish from "./DarsQoldirish.svg";
+import inspektor1 from "./inspekor1.svg";
+import inspektor2 from "./inspektor2.svg";
+import inspektor3 from "./inspector3.svg";
+import good from "./good.svg";
+import bad from "./bad.svg";
+import TableIcon from "./table icon.svg";
 
 export {
   LoginBg,
+  MachitIcon,
+  TableIcon,
   DetIcon1,
   Apperance,
+  DarsQoldirish,
   faceMood1,
+  usersSvg,
   Hijab,
   Maskasvg,
   Soqol,
@@ -52,5 +59,5 @@ export {
   inspektor2,
   inspektor3,
   good,
-  bad
+  bad,
 };
