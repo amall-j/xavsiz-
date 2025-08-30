@@ -170,7 +170,7 @@ export default function KPI() {
         </div>
       </div>
 
-      <div className="w-full flex gap-[20px] mt-[35px]">
+      <div className="w-1/2 flex gap-[20px] mt-[35px]">
         <div className="bg-[#37414C] py-[20px] px-[32px] rounded-[12px]">
           <div className="flex items-center gap-3 mb-[25px] mt-[10px]">
             <img src={good} alt="" />

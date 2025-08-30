@@ -2,7 +2,7 @@ import type { KPIProgressProps } from "../../type/Kpi";
 
 export default function KPIProgress({ index, title, percentage }: KPIProgressProps) {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1 w-full 2xl:w-1/2">
       <div className="flex items-center justify-between text-sm">
         <span className="text-[#FFFFFF]">
           {index}. {title}
