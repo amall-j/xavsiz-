@@ -5,6 +5,7 @@ import StudentModal from "../modal/StudentModal";
 import { ArrowUpRight, CalendarClock } from "lucide-react";
 import { usersSvg } from "../assets";
 import ProfilaktikaModal from "../modal/ProfilaktikaModal";
+import type { Column } from "../type/Table";
 
 export default function StudentTablePage() {
   const [showModal, setShowModal] = useState(false);

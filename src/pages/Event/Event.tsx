@@ -141,6 +141,7 @@ import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { CustomTable } from "../../components/Table";
 import ProfilaktikaModal from "../../modal/ProfilaktikaModal";
+import type { Column } from "../../type/Table";
 
 export default function Event() {
   const [region, setRegion] = useState("");

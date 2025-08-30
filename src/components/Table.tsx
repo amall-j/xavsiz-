@@ -1,31 +1,5 @@
 import { TableIcon } from "../assets";
-import React from "react";
-
-interface Column {
-  key: string;
-  title: string;
-  align?: "left" | "center" | "right";
-  width?: string;
-  render?: (value: any, row: any) => React.ReactNode;
-}
-
-interface TableProps {
-  title?: string;
-  columns: Column[];
-  data: { id: string | number; [key: string]: any }[];
-  className?: string;
-  striped?: boolean;
-  onRowClick?: (id: string | number) => void;
-  actions?: {
-    label: string;
-    onClick: (row: any) => void;
-    variant?: "primary" | "secondary";
-  }[];
-  showPagination?: boolean;
-  currentPage?: number;
-  totalPages?: number;
-  onPageChange?: (page: number) => void;
-}
+import type { TableProps } from "../type/Table";
 
 export function CustomTable({
   title,
@@ -39,11 +13,10 @@ export function CustomTable({
   currentPage = 1,
   totalPages = 1,
   onPageChange,
+  onHolatChange, // Новый пропс
 }: TableProps) {
   return (
-    <div
-      className={`bg-[#1F242F] text-white rounded-lg shadow-md ${className}`}
-    >
+    <div className={`bg-[#1F242F] text-white rounded-lg shadow-md ${className}`}>
       {title && (
         <div className="px-6 py-4">
           <h2 className="text-xl font-bold">{title}</h2>
@@ -76,11 +49,7 @@ export function CustomTable({
                         : "justify-start"
                     }`}
                   >
-                    <img
-                      src={TableIcon}
-                      alt="icon"
-                      className="w-4 h-4 shrink-0"
-                    />
+                    <img src={TableIcon} alt="icon" className="w-4 h-4 shrink-0" />
                     <span className="whitespace-nowrap text-[16px]">
                       {column.title}
                     </span>
@@ -119,7 +88,7 @@ export function CustomTable({
                       }`}
                     >
                       {column.render
-                        ? column.render(row[column.key], row)
+                        ? column.render(row[column.key], row, onHolatChange) // Передаем onHolatChange как третий аргумент
                         : row[column.key]}
                     </td>
                   ))}
