@@ -9,3 +9,4 @@ export interface StudentCardState {
   gruh: string | any;
   age: number;
 }
+

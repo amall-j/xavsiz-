@@ -42,7 +42,7 @@ export function CustomTable({
 }: TableProps) {
   return (
     <div
-      className={`bg-[#1F242F] text-white rounded-lg shadow-md  ${className}`}
+      className={`bg-[#1F242F] text-white rounded-lg shadow-md ${className}`}
     >
       {title && (
         <div className="px-6 py-4">
@@ -103,8 +103,8 @@ export function CustomTable({
                   onClick={() => onRowClick && onRowClick(row.id)}
                   className={`border-b border-gray-700 cursor-pointer ${
                     striped && rowIndex % 2 === 0
-                      ? "bg-transparent"
-                      : "bg-[#1F242F]"
+                      ? "bg-[#1F242F]"
+                      : "bg-[#151B21]"
                   }`}
                 >
                   {columns.map((column) => (

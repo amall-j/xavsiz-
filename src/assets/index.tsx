@@ -29,6 +29,7 @@ import good from "./good.svg";
 import bad from "./bad.svg";
 import TableIcon from "./table icon.svg";
 import StudentImg from "./user3_4.jpg";
+import someone from './someone.svg'
 
 export {
   LoginBg,
@@ -62,4 +63,5 @@ export {
   inspektor3,
   good,
   bad,
+  someone
 };

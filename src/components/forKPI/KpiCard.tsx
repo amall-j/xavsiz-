@@ -1,10 +1,6 @@
-import type { ReactNode } from "react";
+import type { KPIProps } from "../../type/Kpi";
 
-type KPIProps = {
-  icon: ReactNode;
-  title: string;
-  date: string;
-};
+
 
 export default function KPICard({ icon, title, date }: KPIProps) {
   return (
