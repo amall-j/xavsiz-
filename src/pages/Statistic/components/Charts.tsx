@@ -8,8 +8,6 @@ interface PieChartProps {
 
 const PieChart = ({ total, present }: PieChartProps) => {
   const absent = total - present;
-  const presentPercent = Math.round((present / total) * 100);
-  const absentPercent = 100 - presentPercent;
 
   const data = {
     datasets: [

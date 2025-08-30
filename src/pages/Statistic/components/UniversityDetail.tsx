@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import { DetIcon1, Sxema, talaba, yoshlar } from "../../../assets";
 import PieChart from "./Charts";
 import UniverServCard from "../../../components/card/UniverServCard";
-import CustomSelect from "../../../components/RegionSelect";
+import CustomSelect from "../../../components/CustumSelect";
 import { useState } from "react";
 import { Building2, CalendarDays } from "lucide-react";
 import Breadcrumb from "../../../components/BreadCrumb";

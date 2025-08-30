@@ -1,9 +1,4 @@
-type KPIPercentageProps = {
-  color: string;
-  title: string;
-  percentage: string;
-  index?: string;
-};
+import type { KPIPercentageProps } from "../../type/Kpi";
 
 export default function KPIPercentageCard({ color, title, percentage, index }: KPIPercentageProps) {
   return (

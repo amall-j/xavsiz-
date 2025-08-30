@@ -1,8 +1,4 @@
-type KPIProgressProps = {
-  index: number;
-  title: string;
-  percentage: number;
-};
+import type { KPIProgressProps } from "../../type/Kpi";
 
 export default function KPIProgress({ index, title, percentage }: KPIProgressProps) {
   return (

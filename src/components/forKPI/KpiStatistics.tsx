@@ -1,11 +1,6 @@
-import type { ReactNode } from "react";
+import type { KPIStatisticsProps } from "../../type/Kpi";
 
-type KPIStatisticsProps = {
-  icon: ReactNode;
-  title: string;
-  num: string;
-  isFlex?: boolean;
-};
+
 
 export default function KPIStatistics({ icon, title, num, isFlex = true, }: KPIStatisticsProps) {
   return (

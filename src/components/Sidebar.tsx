@@ -16,7 +16,7 @@ const menu = [
   { path: "/students", icon: GraduationCap, label: "Talabalar" },
   { path: "/employees", icon: Users, label: "Hodimlar" },
   { path: "/accidents", icon: Laptop2, label: "Hodisalar" },
-  { path: "/reports", icon: ClipboardList, label: "Hisobotlar" },
+  { path: "/prevention", icon: ClipboardList, label: "Profilaktika" },
 ];
 
 export default function Sidebar() {

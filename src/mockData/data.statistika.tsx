@@ -1,14 +1,16 @@
 import {
   Apperance,
+  DarsQoldirish,
   DetIcon1,
   faceMood1,
-  faceMood2,
   Hijab,
+  MachitIcon,
   Maska,
   Maskasvg,
   offenbicon1,
   offenbicon2,
   Soqol,
+  faceMood2
 } from "../assets";
 
 const universityDashboard = [
@@ -22,9 +24,9 @@ const universityDashboard = [
   {
     id: 2,
     title: "Dars vaqtida masjidga chiqqan talabalar",
-    icon: DetIcon1,
+    icon: MachitIcon,
     number: 5,
-    link: "",
+    link: "/university/:id/mechet",
   },
   { id: 3, title: "Odamlar gavjumligi", icon: DetIcon1, number: 2, link: "" },
   {
@@ -51,9 +53,9 @@ const universityDashboard = [
   {
     id: 7,
     title: "Darsga 5 va undan ortiq kun kelmagan talabalar",
-    icon: DetIcon1,
+    icon: DarsQoldirish,
     number: 8,
-    link: "",
+    link: "/university/:id/leave",
   },
   {
     id: 8,
@@ -222,8 +224,170 @@ const tashqikurinish2 = [
     icon: Maskasvg,
   },
 ];
+
+const machitStudent = [
+  // 1-kun (2025-05-02)
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 92.5,
+    fullName: "KARIMJONOV FARRUX IXLOS O‘G‘LI",
+    fakultet: "Geografiya",
+    grux: "KKU-2205",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.02 - 05:00:00", // Bomdod
+  },
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 88.1,
+    fullName: "ABDULLAEV JASUR SHAVKAT O‘G‘LI",
+    fakultet: "Tarix",
+    grux: "TTU-2104",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.02 - 13:00:00", // Peshin
+  },
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 81.6,
+    fullName: "RAHMONOVA GULBAHOR AZIZ QIZI",
+    fakultet: "Matematika",
+    grux: "MMU-2301",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.02 - 16:30:00", // Asr
+  },
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 79.4,
+    fullName: "SAIDOV AZIZBEK MANSUR O‘G‘LI",
+    fakultet: "Fizika",
+    grux: "FFU-2206",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.02 - 19:00:00", // Shom
+  },
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 84.2,
+    fullName: "QODIROVA NOZIMA ISLOM QIZI",
+    fakultet: "Kimyo",
+    grux: "KKU-2207",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.02 - 21:00:00", // Xufton
+  },
+
+  // 2-kun (2025-05-03)
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 91.3,
+    fullName: "ISMOILOV DAVRON ERKIN O‘G‘LI",
+    fakultet: "Informatika",
+    grux: "IIU-2203",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.03 - 05:00:00", // Bomdod
+  },
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 87.5,
+    fullName: "KARIMOVA SEVINCH BOBUR QIZI",
+    fakultet: "Biologiya",
+    grux: "BBU-2102",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.03 - 13:00:00", // Peshin
+  },
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 83.4,
+    fullName: "XOLIQOV NODIRBEK SHUKUR O‘G‘LI",
+    fakultet: "Huquq",
+    grux: "HHU-2208",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.03 - 16:30:00", // Asr
+  },
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 80.6,
+    fullName: "JURAEVA NILUFAR OYBEK QIZI",
+    fakultet: "Psixologiya",
+    grux: "PPU-2304",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.03 - 19:00:00", // Shom
+  },
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 85.9,
+    fullName: "TOSHQULOV UMID SHAVKAT O‘G‘LI",
+    fakultet: "Sport",
+    grux: "SSU-2105",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.03 - 21:00:00", // Xufton
+  },
+
+  // 3-kun (2025-05-04)
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 90.7,
+    fullName: "YUSUPOVA MADINA QODIR QIZI",
+    fakultet: "Filologiya",
+    grux: "FFU-2209",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.04 - 05:00:00", // Bomdod
+  },
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 82.8,
+    fullName: "MIRZAYEV SHERZOD JAHONGIR O‘G‘LI",
+    fakultet: "Tarjima",
+    grux: "TTU-2101",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.04 - 13:00:00", // Peshin
+  },
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 80.2,
+    fullName: "ABDURAHMONOV DILSHOD ILHOM O‘G‘LI",
+    fakultet: "Iqtisod",
+    grux: "IIU-2202",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.04 - 16:30:00", // Asr
+  },
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 86.4,
+    fullName: "HAMROYEVA AZIZA RUSTAM QIZI",
+    fakultet: "Arxitektura",
+    grux: "AAU-2307",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.04 - 19:00:00", // Shom
+  },
+  {
+    img1: faceMood1,
+    img2: faceMood2,
+    foiz: 84.0,
+    fullName: "RUSTAMOV SHERALI BOTIR O‘G‘LI",
+    fakultet: "Qurilish",
+    grux: "QQU-2203",
+    machitTitle: "Исломобод масжиди Сағбон кўчаси 244-уй",
+    date: "2025.05.04 - 21:00:00", // Xufton
+  },
+
+  // ⚡️ Shu tartibda 2025.05.05, 05.06, 05.07, 05.08 kunlari ham yoziladi...
+];
+
 export {
   universityDashboard,
+  machitStudent,
   OffensStudents,
   tashqikurinish1,
   tashqikurinish2,

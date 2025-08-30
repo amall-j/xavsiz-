@@ -9,6 +9,14 @@ import UniversityDetail from "./pages/Statistic/components/UniversityDetail";
 import UniversityDetailStat from "./pages/Statistic/components/univerDetailing pages/StudentMood";
 import Studentappearance from "./pages/Statistic/components/univerDetailing pages/Studentappearance";
 import Login from "./pages/Login/Login";
+import StudentMachit from "./pages/Statistic/components/univerDetailing pages/StudentMachit";
+import StudentLeave from "./pages/Statistic/components/univerDetailing pages/StudentLeave";
+import Event from "./pages/Event/Event";
+import Profilaktika from "./pages/Profilaktika/Profilaktika";
+import Talabalar from "./pages/Talabalar/Talabalar";
+import StudentDetail from "./pages/Talabalar/TalabaDetail";
+import Xodimlar from "./pages/Employees/Employees";
+import XodimlarDetail from "./pages/Employees/EmployeesDetail";
 
 function DashboardLayout({
   title,
@@ -38,6 +46,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
+        {/* LOGIN */}
         <Route
           path="/login"
           element={
@@ -46,6 +55,8 @@ export default function App() {
             </PublicLayout>
           }
         />
+
+        {/* HOME/STATISTIKA */}
 
         <Route
           path="/"
@@ -56,6 +67,8 @@ export default function App() {
           }
         />
 
+        {/* KPI */}
+
         <Route
           path="/kpi"
           element={
@@ -64,6 +77,8 @@ export default function App() {
             </DashboardLayout>
           }
         />
+
+        {/* UNIVERSITY */}
 
         <Route
           path="/university/:id"
@@ -87,6 +102,78 @@ export default function App() {
           element={
             <DashboardLayout title="Statistika">
               <Studentappearance />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/university/:id/mechet"
+          element={
+            <DashboardLayout title="Statistika">
+              <StudentMachit />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/university/:id/leave"
+          element={
+            <DashboardLayout title="Statistika">
+              <StudentLeave />
+            </DashboardLayout>
+          }
+
+          // HODISALAR
+        />
+        <Route
+          path="/accidents"
+          element={
+            <DashboardLayout title="Hodisalar">
+              <Event />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/prevention"
+          element={
+            <DashboardLayout title="Hodisalar">
+              <Profilaktika />
+            </DashboardLayout>
+          }
+        />
+
+        {/* TALABALAR */}
+        <Route
+          path="/students"
+          element={
+            <DashboardLayout title="Talabalar">
+              <Talabalar />
+            </DashboardLayout>
+          }
+        />
+
+        <Route
+          path="/students/:id"
+          element={
+            <DashboardLayout title="Talabalar">
+              <StudentDetail />
+            </DashboardLayout>
+          }
+        />
+
+        {/* XODIMLAR */}
+        <Route
+          path="/employees"
+          element={
+            <DashboardLayout title="Xodimlar">
+              <Xodimlar />
+            </DashboardLayout>
+          }
+        />
+
+        <Route
+          path="/employees/:id"
+          element={
+            <DashboardLayout title="Xodimlar">
+              <XodimlarDetail />
             </DashboardLayout>
           }
         />
