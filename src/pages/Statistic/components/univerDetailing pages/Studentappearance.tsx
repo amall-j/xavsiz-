@@ -1,5 +1,5 @@
 import { ChevronLeft, User } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Breadcrumb from "../../../../components/BreadCrumb";
 import {
   tashqikurinish1,
@@ -7,15 +7,18 @@ import {
 } from "../../../../mockData/data.statistika";
 
 export default function Studentappearance() {
+  const navigate = useNavigate();
+
   return (
     <div>
       {" "}
       <div className="flex items-center gap-4 bg-[#2E3741] p-4 rounded-lg">
-        <span className="bg-[#37414C] p-2 rounded-full">
-          <Link to={"/"}>
-            <ChevronLeft />
-          </Link>
-        </span>
+        <button
+          onClick={() => navigate(-1)}
+          className="bg-[#37414C] p-2 rounded-full"
+        >
+          <ChevronLeft />
+        </button>
         <div>
           <Breadcrumb
             items={[
@@ -43,7 +46,7 @@ export default function Studentappearance() {
             </p>
           </div>
         ))}
-      </div>
+      </div>{" "}
       <div className="text-[25px] my-4">Talablar</div>
       <div className="grid grid-cols-2 gap-4">
         {tashqikurinish2.map((item, index) => (
@@ -52,8 +55,8 @@ export default function Studentappearance() {
             className={`rounded-2xl shadow-md  p-10 flex flex-col gap-4    bg-[#2E3741] `}
           >
             <div className="flex items-start justify-between">
-              <span className="flex items-center gap-4">
-                <div className="rounded-2xl bg-red-500 w-[200px] h-[200px] overflow-hidden">
+              <div className="flex items-center gap-4">
+                <div className="rounded-2xl  w-[150px] h-[150px] overflow-hidden">
                   <img
                     src={item.img}
                     className="w-full h-full  object-cover  mb-3 "
@@ -63,7 +66,7 @@ export default function Studentappearance() {
                 <h3 className="  text-[25px] text-white font-medium mb-2 max-w-[250px]">
                   {item.fullName}
                 </h3>
-              </span>
+              </div>
               <div className="p-2 bg-[#475360] flex items-center justify-center rounded-full">
                 <img src={item.icon} alt="" className="w-[40px] h-[40px]" />
               </div>

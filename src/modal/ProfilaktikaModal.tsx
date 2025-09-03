@@ -71,164 +71,177 @@ export default function ProfilaktikaModal({
           <X size={30} onClick={onClose} className="cursor-pointer" />
         </div>
 
-        <hr className="border-2 border-white w-full " />
+        <hr className="border-2 border-white w-full mt-2.5 " />
 
-        <div className="flex items-start gap-4 overflow-y-hidden">
-          {/* Chap blok (hodisa preview) */}
-          <div className="bg-[#2E3741] p-10 min-w-[450px] rounded-2xl overflow-hidden">
-            <h1 className="text-[20px] font-bold">Tanlangan hodisa</h1>
-            <div className="grid grid-cols-2 mt-5 ">
-              <div className="flex items-center justify-center flex-col gap-6 ">
-                <div className="flex items-center justify-center gap-3">
-                  <span className="w-[70px] h-[70px] flex items-center justify-center rounded-full overflow-hidden ">
-                    <img
-                      src={StudentImg}
-                      alt=""
-                      className="w-full h-full object-contain"
-                    />
-                  </span>
-                  <h1 className="max-w-[150px]">
-                    Kasimov Shohrux Azizbekovich
-                  </h1>
-                </div>
-                <div className="mt-2 flex items-center justify-center -translate-x-5">
-                  <span>
-                    <p className="text-[#8EA1B6] text-[16px] ">Kamera nomi</p>
-                    <h2 className="text-[#C9C9C9] text-[20px] ">
-                      Kamera nomi yoziladi
-                    </h2>
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-end flex-col gap-6">
-                <div>
-                  <h2 className="text-[#C9C9C9] text-[20px] ">
-                    16:14:54 19.05.2025
-                  </h2>
-                  <div className="mt-3 py-3 px-4 flex items-center justify-center gap-2 bg-[#37414C]  rounded-[8px] w-max">
-                    <p className="text-white text-[18px] flex items-center gap-2 ">
-                      Urush va janjallar
-                    </p>
+        <div className="flex items-center flex-col justify-center  pt-10    overflow-y-auto ">
+          <div className="flex items-center gap-8 mt-14 ">
+            {/* Chap blok (hodisa preview) */}
+            <div className="bg-[#2E3741] p-7 min-w-[450px] rounded-2xl mt-6 ">
+              <h1 className="text-[20px] font-bold ">Tanlangan hodisa</h1>
+              <div className="grid grid-cols-2 mt-3 ">
+                <div className="flex items-center justify-center flex-col gap-6 ">
+                  <div className="flex items-center justify-center gap-3">
+                    <span className="w-[70px] h-[70px] flex items-center justify-center rounded-full overflow-hidden ">
+                      <img
+                        src={StudentImg}
+                        alt=""
+                        className="w-full h-full object-contain"
+                      />
+                    </span>
+                    <h1 className="max-w-[150px]">
+                      Kasimov Shohrux Azizbekovich
+                    </h1>
+                  </div>
+                  <div className="mt-2 flex items-center justify-center -translate-x-5">
+                    <span>
+                      <p className="text-[#8EA1B6] text-[16px] ">Kamera nomi</p>
+                      <h2 className="text-[#C9C9C9] text-[20px] ">
+                        Kamera nomi yoziladi
+                      </h2>
+                    </span>
                   </div>
                 </div>
-                <div>
-                  <p className="text-[#8EA1B6] text-[16px] ">
-                    Kamera joylashuvi
-                  </p>
-                  <h2 className="text-[#C9C9C9] text-[20px] ">Oshxona</h2>
+
+                <div className="flex items-center justify-end flex-col gap-6">
+                  <div>
+                    <h2 className="text-[#C9C9C9] text-[20px] ">
+                      16:14:54 19.05.2025
+                    </h2>
+                    <div className="mt-3 py-3 px-4 flex items-center justify-center gap-2 bg-[#37414C]  rounded-[8px] w-max">
+                      <p className="text-white text-[18px] flex items-center gap-2 ">
+                        Urush va janjallar
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-[#8EA1B6] text-[16px] ">
+                      Kamera joylashuvi
+                    </p>
+                    <h2 className="text-[#C9C9C9] text-[20px] ">Oshxona</h2>
+                  </div>
+                </div>
+
+                <div className="col-span-2 mt-3 w-full h-full object-contain">
+                  <video
+                    src="https://www.w3schools.com/html/movie.mp4"
+                    controls
+                    autoPlay
+                    className="w-full rounded-md"
+                  ></video>
                 </div>
               </div>
+            </div>
 
-              <div className="col-span-2 mt-3 w-full h-full object-contain">
-                <video
-                  src="https://www.w3schools.com/html/movie.mp4"
-                  controls
-                  autoPlay
-                  className="w-full rounded-md"
-                ></video>
-              </div>
+            {/* O‘ng blok (forma) */}
+            <div className="bg-[#2E3741] p-10 min-w-[450px] h-[630px] mt-6 rounded-2xl">
+              <h1 className="text-[20px] font-bold mb-5">
+                Profilaktika tuzish
+              </h1>
+
+              {/* Form ichida input/select/file */}
+              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                {/* Sana */}
+                <div>
+                  <p className="text-[#8EA1B6] text-[16px]">Yaratilgan sana</p>
+                  <input
+                    type="date"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                    className="bg-[#37414C] rounded p-2 w-full border-none outline-none"
+                  />
+                </div>
+
+                {/* Universitet + Hodisa turi */}
+                <div className="flex gap-4">
+                  <div className="flex-1">
+                    <p className="text-[#8EA1B6] text-[16px]">Universitet</p>
+                    <CustomSelect
+                      value={university}
+                      onChange={setUniversity}
+                      options={[
+                        "TATU",
+                        "SamDU",
+                        "O‘zMU",
+                        "Buxoro ITTU",
+                        "NamDU",
+                      ]}
+                      placeholder="Tanlang"
+                    />
+                  </div>
+
+                  <div className="flex-1">
+                    <p className="text-[#8EA1B6] text-[16px]">Hodisa turi</p>
+                    <CustomSelect
+                      value={hodisaTuri}
+                      onChange={setHodisaTuri}
+                      options={["Janjal", "Gavjumlik", "Kech qolish", "Boshqa"]}
+                      placeholder="Tanlang"
+                    />
+                  </div>
+                </div>
+
+                {/* Qatnashuvchilar */}
+                <div>
+                  <p className="text-[#8EA1B6] text-[16px]">Qatnashuvchilar</p>
+                  <CustomSelect
+                    value={participants}
+                    onChange={setParticipants}
+                    options={["Aziz", "Akmal", "Jonibek", "Vadim"]}
+                    placeholder="Tanlang"
+                    className="w-full text-[#8EA1B6]"
+                  />
+                </div>
+
+                {/* Rasm */}
+                <div>
+                  <p className="text-[#8EA1B6] text-[16px] mb-2">
+                    Rasm yuklash
+                  </p>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    id="upload-image"
+                    onChange={(e) =>
+                      e.target.files && setImage(e.target.files[0])
+                    }
+                    className="hidden"
+                  />
+                  <label
+                    htmlFor="upload-image"
+                    className="flex flex-col items-center justify-center w-full  border-2 border-dashed border-[#0095FF] rounded-lg cursor-pointer py-15 hover:bg-[#0095FF]/10 transition"
+                  >
+                    <FaImage className="text-[#0095FF]" size={22} />
+                    <span className="text-[#0095FF] underline">
+                      Rasm yuklash uchun bosing
+                    </span>
+                  </label>
+                </div>
+              </form>
             </div>
           </div>
 
-          {/* O‘ng blok (forma) */}
-          <div className="bg-[#2E3741] p-10 min-w-[450px] h-[640px] ">
-            <h1 className="text-[20px] font-bold mb-5">Profilaktika tuzish</h1>
+          <div className="w-full px-17 mt-4">
+            <p className="text-[#8EA1B6] text-[16px] mb-2">Izoh</p>
+            <div className="bg-[#2E3741] rounded-[12px]">
+              <textarea
+                value={izoh}
+                onChange={(e) => setIzoh(e.target.value)}
+                className="bg-[#37414C] w-full p-3 rounded-md outline-none resize-none"
+                rows={3}
+                placeholder="Izoh kiriting..."
+              />
+            </div>
 
-            {/* Form ichida input/select/file */}
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              {/* Sana */}
-              <div>
-                <p className="text-[#8EA1B6] text-[16px]">Yaratilgan sana</p>
-                <input
-                  type="date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                  className="bg-[#37414C] rounded p-2 w-full border-none outline-none"
-                />
-              </div>
-
-              {/* Universitet + Hodisa turi */}
-              <div className="flex gap-4">
-                <div className="flex-1">
-                  <p className="text-[#8EA1B6] text-[16px]">Universitet</p>
-                  <CustomSelect
-                    value={university}
-                    onChange={setUniversity}
-                    options={["TATU", "SamDU", "O‘zMU", "Buxoro ITTU", "NamDU"]}
-                    placeholder="Tanlang"
-                  />
-                </div>
-
-                <div className="flex-1">
-                  <p className="text-[#8EA1B6] text-[16px]">Hodisa turi</p>
-                  <CustomSelect
-                    value={hodisaTuri}
-                    onChange={setHodisaTuri}
-                    options={["Janjal", "Gavjumlik", "Kech qolish", "Boshqa"]}
-                    placeholder="Tanlang"
-                  />
-                </div>
-              </div>
-
-              {/* Qatnashuvchilar */}
-              <div>
-                <p className="text-[#8EA1B6] text-[16px]">Qatnashuvchilar</p>
-                <CustomSelect
-                  value={participants}
-                  onChange={setParticipants}
-                  options={["Aziz", "Akmal", "Jonibek", "Vadim"]}
-                  placeholder="Tanlang"
-                  className="w-full text-[#8EA1B6]"
-                />
-              </div>
-
-              {/* Rasm */}
-              <div>
-                <p className="text-[#8EA1B6] text-[16px] mb-2">Rasm yuklash</p>
-                <input
-                  type="file"
-                  accept="image/*"
-                  id="upload-image"
-                  onChange={(e) =>
-                    e.target.files && setImage(e.target.files[0])
-                  }
-                  className="hidden"
-                />
-                <label
-                  htmlFor="upload-image"
-                  className="flex flex-col items-center justify-center w-full  border-2 border-dashed border-[#0095FF] rounded-lg cursor-pointer py-15 hover:bg-[#0095FF]/10 transition"
-                >
-                  <FaImage className="text-[#0095FF]" size={22} />
-                  <span className="text-[#0095FF] underline">
-                    Rasm yuklash uchun bosing
-                  </span>
-                </label>
-              </div>
-            </form>
+            <button
+              onClick={handleSubmit}
+              className="mt-4 bg-[#0095FF] hover:bg-[#0077CC] px-6 py-2 rounded-lg font-semibold"
+            >
+              Yuborish
+            </button>
           </div>
         </div>
 
         {/* Izoh va Submit form tashqarida */}
-        <div>
-          <p className="text-[#8EA1B6] text-[16px] mb-2">Izoh</p>
-          <div className="bg-[#2E3741] rounded-[12px]">
-            <textarea
-              value={izoh}
-              onChange={(e) => setIzoh(e.target.value)}
-              className="bg-[#37414C] w-full p-3 rounded-md outline-none resize-none"
-              rows={3}
-              placeholder="Izoh kiriting..."
-            />
-          </div>
-
-          <button
-            onClick={handleSubmit}
-            className="mt-4 bg-[#0095FF] hover:bg-[#0077CC] px-6 py-2 rounded-lg font-semibold"
-          >
-            Yuborish
-          </button>
-        </div>
       </div>
     </div>
   );

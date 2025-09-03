@@ -61,3 +61,27 @@ a {
   margin: 0;
   padding: 0;
 }
+
+@media (max-width: 1300px) {
+  .flex-1300 {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .flex-coll {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1300px) {
+  .huqu-card-icon {
+    width: 5rem;
+    height: 5rem;
+  }
+  .huqu-card-text {
+    
+  }
+  .huqu-card-num {
+  }
+}

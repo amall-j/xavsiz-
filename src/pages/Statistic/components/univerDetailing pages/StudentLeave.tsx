@@ -1,17 +1,19 @@
 import { ChevronLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import Breadcrumb from "../../../../components/BreadCrumb";
 import StudentTablePage from "../../../../components/StudentLeaveTablePage";
 
 export default function StudentLeave() {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="flex items-center  gap-6 bg-[#2E3741] p-4 rounded-lg">
-        <span className="bg-[#37414C] p-2 rounded-full flex items-center justify-center">
-          <Link to={"/"}>
-            <ChevronLeft />
-          </Link>
-        </span>
+        <button
+          onClick={() => navigate(-1)}
+          className="bg-[#37414C] p-2 rounded-full flex items-center justify-center"
+        >
+          <ChevronLeft />
+        </button>
         <div>
           <Breadcrumb
             items={[
@@ -32,4 +34,3 @@ export default function StudentLeave() {
     </div>
   );
 }
-// id,rasm,kelmagan kun, fullName, talaba kartochkasi, darsjadvali, profilaktika, jshshir. univer nomi,fakultet, grux, yashash manzili, hodisalar, ogohlantirihslar

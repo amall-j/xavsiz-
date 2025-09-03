@@ -29,7 +29,13 @@ import good from "./good.svg";
 import bad from "./bad.svg";
 import TableIcon from "./table icon.svg";
 import StudentImg from "./user3_4.jpg";
-import someone from './someone.svg'
+import someone from "./someone.svg";
+import UzbKarta from "./map.png";
+import Neytral from "./neytral.svg";
+import Agresive from "./agresive.svg";
+import Xafa from "./xafa.svg";
+// import Xursand from "./xursand.svg";
+import Xursand from "./xu.svg";
 
 export {
   LoginBg,
@@ -38,7 +44,12 @@ export {
   TableIcon,
   DetIcon1,
   Apperance,
+  UzbKarta,
   DarsQoldirish,
+  Neytral,
+  Agresive,
+  Xafa,
+  Xursand,
   faceMood1,
   usersSvg,
   Hijab,
@@ -63,5 +74,5 @@ export {
   inspektor3,
   good,
   bad,
-  someone
+  someone,
 };
