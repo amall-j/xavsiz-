@@ -214,8 +214,13 @@ export default function StudentDetail() {
                 <div className="bg-[#0095FF] rounded-[4px] p-2 text-sm">
                   20:02:08:04:04:0260
                 </div>
-                <div className="w-[40px] h-[36px] bg-[#0095FF4D] rounded-[4px] flex items-center justify-center">
-                  <Copy size={20} className="text-[#FFFFFF]" />
+                <div
+                  onClick={() =>
+                    navigator.clipboard.writeText("20:02:08:04:04:0260")
+                  }
+                  className="w-[40px] h-[36px] bg-[#0095FF4D] rounded-[4px] flex items-center justify-center cursor-pointer"
+                >
+                  <Copy />
                 </div>
               </div>
             </div>
@@ -332,13 +337,29 @@ export default function StudentDetail() {
               title="Universitetning mulk turi"
             />
             <div className="grid grid-cols-2 gap-[4px] items-stretch">
-              <StudentCard sm={true} title="Ta'lim tili" text={staticData.nationality} />
+              <StudentCard
+                sm={true}
+                title="Ta'lim tili"
+                text={staticData.nationality}
+              />
               <StudentCard sm={true} title="Ta'lim shakli" text="Sirtqi" />
-              <StudentCard sm={true} title="Fakultet nomi" text={student.fakultet} />
-              <StudentCard sm={true} title="Mutaxassislik" text={student.fakultet} />
+              <StudentCard
+                sm={true}
+                title="Fakultet nomi"
+                text={student.fakultet}
+              />
+              <StudentCard
+                sm={true}
+                title="Mutaxassislik"
+                text={student.fakultet}
+              />
               <StudentCard sm={true} title="Guruh nomi" text="4is24" />
               <StudentCard sm={true} title="Kurs" text="1-kurs" />
-              <StudentCard sm={true} title="To'lov turi" text="To'lov-shartnoma" />
+              <StudentCard
+                sm={true}
+                title="To'lov turi"
+                text="To'lov-shartnoma"
+              />
               <StudentCard sm={true} title="Holati" text="O'qimoqda" />
             </div>
           </div>
