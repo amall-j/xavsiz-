@@ -16,7 +16,9 @@ export function CustomTable({
   onHolatChange, // Новый пропс
 }: TableProps) {
   return (
-    <div className={`bg-[#1F242F] text-white rounded-lg shadow-md ${className}`}>
+    <div
+      className={`bg-[#1F242F] text-white rounded-lg shadow-md ${className}`}
+    >
       {title && (
         <div className="px-6 py-4">
           <h2 className="text-xl font-bold">{title}</h2>
@@ -30,7 +32,7 @@ export function CustomTable({
               {columns.map((column) => (
                 <th
                   key={column.key}
-                  className={`px-4 py-3 text-[16px] font-semibold whitespace-nowrap ${
+                  className={`px-5 py-3 text-[16px] font-semibold whitespace-nowrap ${
                     column.width ? column.width : ""
                   } ${
                     column.align === "center"
@@ -49,7 +51,11 @@ export function CustomTable({
                         : "justify-start"
                     }`}
                   >
-                    <img src={TableIcon} alt="icon" className="w-4 h-4 shrink-0" />
+                    <img
+                      src={TableIcon}
+                      alt="icon"
+                      className="w-4 h-4 shrink-0"
+                    />
                     <span className="whitespace-nowrap text-[16px]">
                       {column.title}
                     </span>

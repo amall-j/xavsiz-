@@ -10,6 +10,7 @@ type Props = {
   options: string[]; // tanlanadigan qiymatlar ro'yxati
   placeholder?: string; // hech narsa tanlanmagan paytda ko‘rinadigan matn
   icon?: ReactNode; // optional — MapPin yoki boshqa icon
+  width?: number;
   className?: string; // qo‘shimcha class yozish uchun ixtiyoriy props
 };
 
@@ -19,6 +20,7 @@ export default function CustomSelect({
   options,
   placeholder = "Qiymat tanlang",
   icon,
+  width,
   className = "",
 }: Props) {
   const handleChange = (event: SelectChangeEvent) => {
@@ -29,7 +31,7 @@ export default function CustomSelect({
     <FormControl
       sx={{
         m: 1,
-        minWidth: 250,
+        width: width,
         bgcolor: "#37414C",
         borderRadius: "10px",
         "& .MuiOutlinedInput-notchedOutline": { border: "none" },

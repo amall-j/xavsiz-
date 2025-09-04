@@ -32,18 +32,27 @@ const data = [
 ];
 
 const columns = [
-  { key: "id", title: "№", align: "center" as const },
+  {
+    key: "id",
+    title: "№",
+    align: "center" as const,
+    render: (v: string) => <p className="text-[20px]">{v}</p>,
+  },
   {
     key: "userImg",
     title: "Rasm",
     align: "center" as const,
-    render: (v: string) => <img src={v} className="w-10 h-10 rounded-full mx-auto" />,
+    render: (v: string) => (
+      <img src={v} className="w-10 h-10 rounded-full mx-auto" />
+    ),
   },
   {
     key: "eventImg",
     title: "Biriktirilgan foto",
     align: "center" as const,
-    render: (v: string) => <img src={v} className="w-16 h-10 rounded-md mx-auto" />,
+    render: (v: string) => (
+      <img src={v} className="w-16 h-10 rounded-md mx-auto" />
+    ),
   },
   {
     key: "participants",
@@ -51,18 +60,34 @@ const columns = [
     align: "center" as const,
     render: (_: any, row: any) => (
       <div className="flex items-center gap-3">
-        <p className="bg-[#37414C] px-3 py-2 rounded-md">{row.participant1}</p>
-        <p className="bg-[#37414C] px-3 py-2 rounded-md">{row.participant2}</p>
+        <p className="bg-[#37414C] px-3 py-2 rounded-md text-[16px]">
+          {row.participant1}
+        </p>
+        <p className="bg-[#37414C] px-3 py-2 rounded-md text-[16px]">
+          {row.participant2}
+        </p>
       </div>
     ),
   },
-  { key: "date", title: "Yaratilgan vaqt", align: "center" as const },
-  { key: "university", title: "Universitet nomi", align: "center" as const },
+  {
+    key: "date",
+    title: "Yaratilgan vaqt",
+    align: "center" as const,
+    render: (v: string) => <p className="text-[15px]">{v}</p>,
+  },
+  {
+    key: "university",
+    title: "Universitet nomi",
+    align: "center" as const,
+    render: (v: string) => <p className="text-[20px]">{v}</p>,
+  },
   {
     key: "eventType",
     title: "Hodisa turi",
     align: "center" as const,
-    render: (v: string) => <span className="bg-[#37414C] px-3 py-3 rounded-md">{v}</span>,
+    render: (v: string) => (
+      <p className="bg-[#37414C]   text-[16px] py-3 rounded-md">{v}</p>
+    ),
   },
   {
     key: "comment",
@@ -70,7 +95,7 @@ const columns = [
     align: "center" as const,
     render: (v: string) => (
       <div className="flex items-center justify-center gap-2">
-        <span>{v}</span>
+        <p className="text-[15px]">{v}</p>
         <Info size={18} className="text-gray-400 cursor-pointer" />
       </div>
     ),
@@ -79,13 +104,20 @@ const columns = [
     key: "holat",
     title: "Holat",
     align: "center" as const,
-    render: (value: string, row: any, handleHolatChange?: (id: number, newValue: string) => void) => {
+    render: (
+      value: string,
+      row: any,
+      handleHolatChange?: (id: number, newValue: string) => void
+    ) => {
       const options = ["Yangi", "Jarayonda"];
-      const selectClassName = value === "Yangi" ? "bg-blue-600" : "bg-yellow-500";
+      const selectClassName =
+        value === "Yangi" ? "bg-blue-600" : "bg-yellow-500";
       return (
         <CustomSelect
           value={value}
-          onChange={(newValue) => handleHolatChange && handleHolatChange(row.id, newValue)}
+          onChange={(newValue) =>
+            handleHolatChange && handleHolatChange(row.id, newValue)
+          }
           options={options}
           placeholder="Holatni tanlang"
           className={selectClassName}
@@ -97,12 +129,18 @@ const columns = [
     key: "aybdorStud",
     title: "Aybdor talaba",
     align: "center" as const,
-    render: (value: string, row: any, handleHolatChange?: (id: number, newValue: string) => void) => {
+    render: (
+      value: string,
+      row: any,
+      handleHolatChange?: (id: number, newValue: string) => void
+    ) => {
       const options = ["Uchrashuv belgilash", "Suxbat qurish"];
       return (
         <CustomSelect
           value={value}
-          onChange={(newValue) => handleHolatChange && handleHolatChange(row.id, newValue)}
+          onChange={(newValue) =>
+            handleHolatChange && handleHolatChange(row.id, newValue)
+          }
           options={options}
           placeholder="Holatni tanlang"
         />
@@ -129,7 +167,7 @@ export default function Profilaktika() {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-6 overflow-x-auto">
       <CustomTable
         title="Profilaktika hodisalari"
         columns={columns}
@@ -142,7 +180,7 @@ export default function Profilaktika() {
             setCurrentPage(page);
           }
         }}
-        onHolatChange={handleHolatChange} 
+        onHolatChange={handleHolatChange}
       />
     </div>
   );

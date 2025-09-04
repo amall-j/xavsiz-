@@ -30,7 +30,7 @@ const PieChart = ({ total, present }: PieChartProps) => {
   };
 
   return (
-    <div className="relative w-full h-[300px] flex mt-12.5 flex-col items-center">
+    <div className="relative w-full h-[300px] flex mt-5 flex-col items-center">
       <Pie data={data} options={options} />
 
       {/* markazdagi jami */}
@@ -42,7 +42,7 @@ const PieChart = ({ total, present }: PieChartProps) => {
       </div>
 
       {/* pastdagi kelgan / kelmagan */}
-      <div className="mt-6 flex flex-col gap-8 w-full">
+      <div className="mt-2 flex flex-col gap-8 w-full ">
         <div className="bg-[#37414C] px-5 py-3 rounded-lg flex flex-col  items-start">
           <span className="flex items-center gap-3">
             <span className="w-4 h-4 rounded-full bg-[#31BA6A]"></span>

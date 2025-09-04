@@ -50,7 +50,11 @@ export default function Xodimlar() {
       title: "Rasm",
       align: "center",
       render: (value: string) => (
-        <img src={value} alt="avatar" className="w-12 h-12 rounded-lg mx-auto" />
+        <img
+          src={value}
+          alt="avatar"
+          className="w-12 h-12 rounded-lg mx-auto"
+        />
       ),
     },
     { key: "fullName", title: "F.I.SH", align: "center" },
