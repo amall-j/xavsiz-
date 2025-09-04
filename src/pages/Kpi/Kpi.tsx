@@ -27,8 +27,8 @@ import { CustomTable } from "../../components/Table";
 
 export default function KPI() {
   return (
-    <div className="h-screen w-full pb-4">
-      <div className="flex items-center justify-between gap-4">
+    <div className="h-screen w-full">
+      <div className="flex items-center justify-between gap-4 2xl:gap-[100px]">
         <KPICard
           icon={<CalendarClock />}
           title="KPI boshlanish sanasi"
@@ -46,8 +46,8 @@ export default function KPI() {
         />
       </div>
 
-      <div className="flex gap-[10px] mt-[35px] items-stretch">
-        <div className="flex gap-[15px] flex-wrap items-stretch w-full">
+      <div className="flex gap-[15px] mt-[35px] items-stretch 2xl:items-start">
+        <div className="flex gap-[15px] flex-wrap items-stretch justify-between">
           {statisticsData.map((item, idx) => (
             <KPIStatistics
               key={idx}
@@ -67,8 +67,8 @@ export default function KPI() {
       </div>
 
       <div className="flex gap-[14px] mt-[35px] items-stretch">
-        <img className="rounded-lg" src={map} alt="" />
-        <div className="bg-[#2E3741] p-[20px] rounded-[16px] w-full">
+        <img className="rounded-lg 2xl:w-1/2 2xl:h-[750px]" src={map} alt="" />
+        <div className="bg-[#2E3741] p-[20px] rounded-[16px] w-full 2xl:w-1/2">
           <h2 className="text-[20px]/[31px] font-medium text-white">
             Viloyatlar kesimida o'rtancha KPI reytingi
           </h2>
@@ -170,8 +170,8 @@ export default function KPI() {
         </div>
       </div>
 
-      <div className="w-1/2 flex gap-[20px] mt-[35px]">
-        <div className="bg-[#37414C] py-[20px] px-[32px] rounded-[12px]">
+      <div className="w-full flex items-stretch my-[16px] gap-[14px]">
+        <div className="bg-[#37414C] py-[20px] px-[22px] rounded-[12px] w-1/2">
           <div className="flex items-center gap-3 mb-[25px] mt-[10px]">
             <img src={good} alt="" />
             <h2 className="text-[#FFFFFF font-medium text-[20px]">
@@ -210,7 +210,7 @@ export default function KPI() {
           />
         </div>
 
-        <div className="bg-[#37414C] py-[20px] px-[32px] rounded-[12px] ">
+        <div className="bg-[#37414C] py-[20px] px-[22px] rounded-[12px] w-1/2">
           <div className="flex items-center gap-3 mb-[25px] mt-[10px]">
             <img src={bad} alt="" />
             <h2 className="text-[#FFFFFF font-medium text-[20px]">

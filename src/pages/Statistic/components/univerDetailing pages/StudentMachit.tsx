@@ -1,5 +1,5 @@
 import { ChevronLeft, Eye } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import Breadcrumb from "../../../../components/BreadCrumb";
 import { Pagination } from "../../../../components/Pagination";
 import { machitStudent } from "../../../../mockData/data.statistika";
@@ -7,8 +7,9 @@ import { useState } from "react";
 import { usersSvg } from "../../../../assets";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import { useNavigate } from "react-router-dom";
 export default function StudentMachit() {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
@@ -45,11 +46,12 @@ export default function StudentMachit() {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="bg-[#37414C] p-2 rounded-full flex items-center justify-center">
-              <Link to={"/"}>
-                <ChevronLeft />
-              </Link>
-            </span>
+            <button
+              onClick={() => navigate(-1)}
+              className="bg-[#37414C] p-2 rounded-full flex items-center justify-center"
+            >
+              <ChevronLeft />
+            </button>
             <div>
               <Breadcrumb
                 items={[{ title: "Masjidda aniqlangan talabalar", link: "" }]}
