@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { DetIcon1, Sxema, talaba, UzbKarta, yoshlar } from "../../../assets";
+import { DetIcon1, talaba, UzbKarta, yoshlar } from "../../../assets";
 import PieChart from "./Charts";
 import UniverServCard from "../../../components/card/UniverServCard";
 import CustomSelect from "../../../components/CustumSelect";
@@ -20,7 +20,7 @@ export default function UniversityDetail() {
   const [open, setOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
 
-  const handleClick = (src) => {
+  const handleClick = (src: string) => {
     setSelectedImage(src);
     setOpen(true);
   };
@@ -158,7 +158,7 @@ export default function UniversityDetail() {
         </div>
 
         {/* 3) O‘ng blok */}
-        <div className="col-span-3 bg-[#2E3741] rounded-xl p-5 flex flex-col gap-4">
+        <div className="col-span-3 bg-[#2E3741] rounded-xl p-3 flex flex-col gap-4">
           <div className="flex justify-between flex-coll items-center">
             <h3 className="text-white text-[20px] font-semibold">
               Huquqbuzarliklar
@@ -169,8 +169,6 @@ export default function UniversityDetail() {
                 onChange={setOffenYear}
                 options={["2025", "2024", "2023", "2022"]}
                 icon={<CalendarDays />}
-                className="w-max"
-                width={180}
               />
             </form>
           </div>

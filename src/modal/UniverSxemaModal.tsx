@@ -1,5 +1,13 @@
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-export default function ImageModal({ src, alt, isOpen, onClose }) {
+
+interface ImageModalProps {
+  src: string;
+  alt: string;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default function ImageModal({ src, alt, isOpen, onClose }: ImageModalProps) {
   if (!isOpen) return null;
 
   return (
@@ -15,7 +23,7 @@ export default function ImageModal({ src, alt, isOpen, onClose }) {
             <img
               src={src}
               alt={alt}
-              className="h-[90vh] w-[90vw] object-contain "
+              className="h-[90vh] w-[90vw] object-contain"
             />
           </TransformComponent>
         </TransformWrapper>
