@@ -44,10 +44,13 @@ export default function CustomSelect({
         },
       }}
       size="small"
-      className={className} // <-- qo‘shildi
+      className={className}
     >
       <Select
         value={value}
+        MenuProps={{
+          disableScrollLock: true,
+        }}
         onChange={handleChange}
         displayEmpty
         renderValue={(selected) => (

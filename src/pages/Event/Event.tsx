@@ -1,140 +1,3 @@
-// import { Search } from "lucide-react";
-// import { Link } from "react-router-dom";
-// import { ArrowUpRight } from "lucide-react";
-// import CustomSelect from "../../components/RegionSelect";
-// import { useState } from "react";
-// import { FaStar } from "react-icons/fa";
-// import { CustomTable } from "../../components/Table";
-// export default function Event({}) {
-//   const [region, setRegion] = useState("");
-//   const [profilaktik, setProfilaktik] = useState(false);
-//   const columns: Column[] = [
-//     {
-//       key: "id",
-//       title: "ID",
-//       align: "center",
-//       render: (value: string) => (
-//         <p className="text-[16px] text-[#CACACA]">{value}</p>
-//       ),
-//     },
-//     {
-//       key: "video",
-//       title: "Video",
-//       align: "center",
-//       render: (value: string) => (
-//         <video src={value} controls className="w-28 h-20 mx-auto rounded-lg" />
-//       ),
-//     },
-//     {
-//       key: "hodisaTuri",
-//       title: "Hodisa turi",
-//       align: "center",
-//       render: (value: string) => (
-//         <p className="  text-[16px] text-[#CACACA]  text-center bg-[#37414C] py-3 rounded-lg   ">
-//           {value}
-//         </p>
-//       ),
-//     },
-//     {
-//       key: "aniqlanganVaqt",
-//       title: "Aniqlangan vaqti",
-//       align: "center",
-//     },
-//     {
-//       key: "kameraNomi",
-//       title: "Kamera nomi",
-//       align: "center",
-//     },
-//     {
-//       key: "kameraJoylashuvi",
-//       title: "Kamera joylashuvi",
-//       align: "center",
-//     },
-//     {
-//       key: "profilaktika",
-//       title: "Amallar",
-//       align: "center",
-//       render: (_: string, row: any) => (
-//         <Link to={`/profilaktika/${row.id}`}>
-//           <p
-//             onClick={() => setProfilaktik(true)}
-//             className="bg-red-500 text-white py-2 mx-auto w-max px-8  text-center rounded-[8px] justify-center gap-1 flex items-center"
-//           >
-//             Profilaktika
-//             <ArrowUpRight size={18} className="text-[#AAC0D8]" />
-//           </p>
-//         </Link>
-//       ),
-//     },
-//   ];
-
-//   const data = [
-//     {
-//       id: 1,
-//       video: "https://www.w3schools.com/html/mov_bbb.mp4",
-//       hodisaTuri: "Yiqilish Odamlar gavjumligi",
-//       aniqlanganVaqt: "2025-08-27 14:30",
-//       kameraNomi: "Kamera #1",
-//       kameraJoylashuvi: "Bosh eshik",
-//       profilaktika: "Profilaktika",
-//     },
-//     {
-//       id: 2,
-//       video: "https://www.w3schools.com/html/movie.mp4",
-//       hodisaTuri: "Odamlar gavjumligi",
-//       aniqlanganVaqt: "2025-08-28 09:15",
-//       kameraNomi: "Kamera #2",
-//       kameraJoylashuvi: "Sport zal",
-//       profilaktika: "Profilaktika",
-//     },
-//   ];
-
-//   return (
-//     <div>
-//       <div className="mb-4 flex items-center">
-//         <div className="bg-[#2E3741] w-max flex items-center rounded-lg  h-max py-2 overflow-hidden ">
-//           <Search className="translate-x-5" />
-//           <input
-//             type="text"
-//             className="border-none outline-none px-8 w-[300px] text-[16px] bg-[#2E3741] "
-//             placeholder="QidiruvF.I.SH/JSHSHIR/Login"
-//           />
-//         </div>
-
-//         <CustomSelect
-//           value={region}
-//           onChange={(val) => setRegion(val)}
-//           options={[
-//             "Janjallar va mushtlashuvlar",
-//             "Kech qolgan talabalar",
-//             "Dars vaqtida masjidga chiqqan talabalar",
-//             "Odamlar gavjumligi",
-//             "Kampus hududida topilmagan talabalar",
-//             "Yotoqxonada begona odamlarning bo‘lishi",
-//             "OTM hududiga kirgan begona shaxslar ",
-//           ]}
-//           placeholder="Barchasi"
-//           icon={
-//             <FaStar
-//               className="text-black bg-white w-[25px] h-[25px] rounded-full p-1 "
-//               size={15}
-//             />
-//           }
-//         />
-//       </div>
-//       <div className="rounded-lg overflow-hidden">
-//         <CustomTable
-//           columns={columns}
-//           data={data}
-//           striped
-//           showPagination={true}
-//         />
-//       </div>
-//       {profilaktik&& }
-//     </div>
-//   );
-// }
-
 import { Search, ArrowUpRight } from "lucide-react";
 import CustomSelect from "../../components/CustumSelect";
 import { useState } from "react";
@@ -160,7 +23,12 @@ export default function Event() {
       title: "Video",
       align: "center",
       render: (value: string) => (
-        <video src={value} controls className="w-28 h-20 mx-auto rounded-lg" />
+        <video
+          src={value}
+          controls
+          autoPlay
+          className="w-28 h-20 mx-auto rounded-lg"
+        />
       ),
     },
     { key: "hodisaTuri", title: "Hodisa turi", align: "center" },

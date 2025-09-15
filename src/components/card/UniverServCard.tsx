@@ -74,7 +74,7 @@ export default function UniverServCard({
               {number}
             </p>
           </div>
-          <img src={img} alt={title} className="w-22 h-22 object-cover" />
+          <img src={img} alt={title} className="w-22 h-22  object-cover" />
         </div>
       )}
 

@@ -332,13 +332,29 @@ export default function StudentDetail() {
               title="Universitetning mulk turi"
             />
             <div className="grid grid-cols-2 gap-[4px] items-stretch">
-              <StudentCard sm={true} title="Ta'lim tili" text={staticData.nationality} />
+              <StudentCard
+                sm={true}
+                title="Ta'lim tili"
+                text={staticData.nationality}
+              />
               <StudentCard sm={true} title="Ta'lim shakli" text="Sirtqi" />
-              <StudentCard sm={true} title="Fakultet nomi" text={student.fakultet} />
-              <StudentCard sm={true} title="Mutaxassislik" text={student.fakultet} />
+              <StudentCard
+                sm={true}
+                title="Fakultet nomi"
+                text={student.fakultet}
+              />
+              <StudentCard
+                sm={true}
+                title="Mutaxassislik"
+                text={student.fakultet}
+              />
               <StudentCard sm={true} title="Guruh nomi" text="4is24" />
               <StudentCard sm={true} title="Kurs" text="1-kurs" />
-              <StudentCard sm={true} title="To'lov turi" text="To'lov-shartnoma" />
+              <StudentCard
+                sm={true}
+                title="To'lov turi"
+                text="To'lov-shartnoma"
+              />
               <StudentCard sm={true} title="Holati" text="O'qimoqda" />
             </div>
           </div>

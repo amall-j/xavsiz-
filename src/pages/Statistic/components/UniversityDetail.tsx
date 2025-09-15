@@ -20,7 +20,7 @@ export default function UniversityDetail() {
   const [open, setOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
 
-  const handleClick = (src) => {
+  const handleClick = (src: any) => {
     setSelectedImage(src);
     setOpen(true);
   };
