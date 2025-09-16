@@ -5,7 +5,6 @@ import {
   DetIcon1,
   jaxl,
   talaba,
-  XonadaBegona,
   yoshlar,
 } from "../../../assets";
 import PieChart from "./Charts";
@@ -35,6 +34,8 @@ export default function UniversityDetail() {
     setSelectedImage(image);
     setIsOpen(true);
   };
+
+  // @ts-ignore
   const floorImage = floorImages[etaj] || null;
   return (
     <div className="flex flex-col gap-4">

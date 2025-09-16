@@ -7,7 +7,6 @@ import {
   Hijab,
   MachitIcon,
   Maska,
-  Maskasvg,
   offenbicon1,
   offenbicon2,
   Soqol,
