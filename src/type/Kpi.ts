@@ -24,4 +24,5 @@ export type KPIStatisticsProps = {
   title: string;
   num: string;
   isFlex?: boolean;
+  className?: string;
 };

@@ -46,8 +46,29 @@ export default function KPI() {
         />
       </div>
 
-      <div className="flex gap-[15px] mt-[35px] items-stretch 2xl:items-start">
-        <div className="flex gap-[15px] flex-wrap items-stretch justify-between">
+      {/* <div className="grid grid-cols-5 gap-[15px] mt-[35px] items-stretch 2xl:items-start">
+        <div className="col-span-1 flex gap-[15px] flex-wrap items-stretch justify-between">
+          {statisticsData.map((item, idx) => (
+            <KPIStatistics
+              key={idx}
+              icon={item.icon}
+              title={item.title}
+              num={item.num}
+            />
+          ))}
+        </div>
+        <div className="col-span-1">
+          <KPIStatistics
+            icon={<img src={img} />}
+            title="Jinoyat oldini olish bo'yicha qo'shimcha chora-tadbirlar"
+            num="0"
+            isFlex={false}
+          />
+        </div>
+      </div> */}
+      <div className="grid grid-cols-5 gap-[15px] mt-[35px] items-stretch">
+        {/* Chap blok */}
+        <div className="col-span-4 grid grid-cols-4 gap-[17px] ">
           {statisticsData.map((item, idx) => (
             <KPIStatistics
               key={idx}
@@ -58,12 +79,16 @@ export default function KPI() {
           ))}
         </div>
 
-        <KPIStatistics
-          icon={<img src={img} />}
-          title="Jinoyat oldini olish bo'yicha qo'shimcha chora-tadbirlar"
-          num="0"
-          isFlex={false}
-        />
+        {/* O‘ng blok */}
+        <div className=" row-span-2  h-full">
+          <KPIStatistics
+            icon={<img src={img} />}
+            title="Jinoyat oldini olish bo'yicha qo'shimcha chora-tadbirlar"
+            num="0"
+            isFlex={false}
+            className="h-full justify-center items-start gap-8"
+          />
+        </div>
       </div>
 
       <div className="flex gap-[14px] mt-[35px] items-stretch">
