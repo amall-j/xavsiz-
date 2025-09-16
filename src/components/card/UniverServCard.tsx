@@ -11,6 +11,9 @@ interface UniverServCardProps {
   className?: string;
   classNameitem?: string;
   classPadText?: string;
+  extraNumber?: number;
+  extraIcon?: string; // ikon URL yoki emoji/text
+  extraColor?: string;
 }
 
 export default function UniverServCard({
@@ -24,6 +27,9 @@ export default function UniverServCard({
   classPadText,
   className = "",
   classNameitem = "",
+  extraNumber,
+  extraIcon,
+  extraColor = "text-red-400",
 }: UniverServCardProps) {
   const navigate = useNavigate();
 
@@ -38,27 +44,54 @@ export default function UniverServCard({
       `}
     >
       {mode === "top" && (
-        // 1) Top: icon + text, pastda chapda number
         <div className="flex flex-col justify-between w-full">
+          {/* icon + title */}
           <div className="flex flex-1300 items-center gap-2">
             <img src={img} alt={title} className="w-20 h-20 object-contain" />
             <h3 className="text-[16px] text-[#8EA1B6] font-medium">{title}</h3>
           </div>
-          <p
-            className={`text-[22px] font-semibold mt-2 flex-1300  ${numColor}`}
-          >
-            {number}
-          </p>
+
+          {/* number + optional extra */}
+          <div className="flex items-center gap-3 mt-2 flex-1300">
+            <p className={`text-[22px] font-semibold ${numColor}`}>{number} </p>
+
+            {(extraNumber || extraIcon) && (
+              <div className="flex items-center gap-4">
+                {extraNumber !== undefined && (
+                  <>
+                    <span>/</span>
+                    <span className={`text-[22px] font-medium ${extraColor}`}>
+                      {extraNumber} %
+                    </span>
+                  </>
+                )}
+                {extraIcon && (
+                  <img
+                    src={extraIcon}
+                    alt="extra"
+                    className="w-10 h-10 object-contain"
+                  />
+                )}
+              </div>
+            )}
+          </div>
         </div>
       )}
-
       {mode === "side" && (
         // 2) Chapda katta icon, o‘rtada text+number, o‘ngda icon
-        <div className="flex items-center justify-between gap-4 w-full">
-          <img src={img} alt="left-icon" className="w-20 h-20 object-cover" />
+        <div
+          className={`flex items-center justify-between gap-4 w-full ${className}`}
+        >
+          <img
+            src={img}
+            alt="left-icon"
+            className={`w-50 h-50  object-contain`}
+          />
           <div className="flex flex-col flex-1">
-            <h3 className="text-[18px] text-[#8EA1B6] font-medium">{title}</h3>
-            <p className={`text-[35px] font-semibold `}>{number}</p>
+            <h3 className="text-[18px] text-[#8EA1B6] font-medium max-w-[150px]">
+              {title}
+            </h3>
+            <p className={`text-[60px] font-semibold `}>{number}</p>
           </div>
         </div>
       )}
@@ -74,7 +107,9 @@ export default function UniverServCard({
               {number}
             </p>
           </div>
-          <img src={img} alt={title} className="w-22 h-22  object-cover" />
+          <div>
+            <img src={img} alt={title} className="w-22 h-22  object-contain" />
+          </div>
         </div>
       )}
 

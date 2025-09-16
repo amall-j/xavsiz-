@@ -1,5 +1,13 @@
 import { useLocation } from "react-router-dom";
-import { DetIcon1, Sxema, talaba, UzbKarta, yoshlar } from "../../../assets";
+import {
+  BuildSxema,
+  BuildSxema2,
+  DetIcon1,
+  jaxl,
+  talaba,
+  XonadaBegona,
+  yoshlar,
+} from "../../../assets";
 import PieChart from "./Charts";
 import UniverServCard from "../../../components/card/UniverServCard";
 import CustomSelect from "../../../components/CustumSelect";
@@ -10,20 +18,24 @@ import {
   OffensStudents,
   universityDashboard,
 } from "../../../mockData/data.statistika";
-import ImageModal from "../../../modal/UniverSxemaModal";
-
+import { ImageModal } from "../../../modal/UniverSxemaModal";
+const floorImages = {
+  "1-etaj": BuildSxema,
+  "2-etaj": BuildSxema2,
+};
 export default function UniversityDetail() {
   const location = useLocation();
   const { title } = location.state || {};
   const [etaj, setEtaj] = useState("1-etaj");
   const [offenYear, setOffenYear] = useState("2025");
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
 
-  const handleClick = (src: any) => {
-    setSelectedImage(src);
-    setOpen(true);
+  const handleImageClick = (image: any) => {
+    setSelectedImage(image);
+    setIsOpen(true);
   };
+  const floorImage = floorImages[etaj] || null;
   return (
     <div className="flex flex-col gap-4">
       {/* Header */}
@@ -37,7 +49,18 @@ export default function UniversityDetail() {
         <div className="col-span-5 flex flex-col gap-4">
           {/* 1-qator */}
           <div className="grid grid-cols-5 gap-4">
-            {universityDashboard.slice(0, 5).map((item) => (
+            <UniverServCard
+              id={565}
+              title={"Talabalar hozirgi kayfiyati bo‘yicha"}
+              img={DetIcon1}
+              number={1212}
+              mode="top"
+              link={"/university/:id/studentsmood"}
+              extraNumber={1313}
+              extraIcon={jaxl}
+            />
+
+            {universityDashboard.slice(1, 5).map((item) => (
               <UniverServCard
                 key={item.id}
                 id={item.id}
@@ -66,12 +89,13 @@ export default function UniversityDetail() {
             ))}
             <div className="col-span-2">
               <UniverServCard
-                id={15}
-                title={" Yotoqxonada begona odamlarning bo‘lishi"}
-                img={DetIcon1}
-                number={1212}
+                key={universityDashboard[8].id}
+                id={universityDashboard[8].id}
+                title={universityDashboard[8].title}
+                img={universityDashboard[8].icon}
+                number={universityDashboard[8].number}
                 mode="top"
-                link={""}
+                link={universityDashboard[8].link}
               />
             </div>
           </div>
@@ -108,17 +132,17 @@ export default function UniversityDetail() {
           </div>
           <div className="justify-center gap-4 flex h-full items-stretch ">
             <UniverServCard
-              img={DetIcon1}
-              number={255}
-              id={100}
-              title="O‘gil bolalar"
+              img={universityDashboard[10].icon}
+              number={universityDashboard[10].number}
+              id={universityDashboard[10].id}
+              title={universityDashboard[10].title}
               className="h-full flex-1"
             />
             <UniverServCard
-              img={DetIcon1}
-              number={255}
-              id={101}
-              title="Qiz bolalar"
+              img={universityDashboard[11].icon}
+              number={universityDashboard[10].number}
+              id={universityDashboard[10].id}
+              title={universityDashboard[10].title}
               className="h-full flex-1"
             />
           </div>
@@ -141,24 +165,30 @@ export default function UniversityDetail() {
               />
             </form>
           </div>
-          <div className="w-full   pb-20 px-5 h-full rounded-lg overflow-hidden">
-            <img
-              src={UzbKarta}
-              alt="sxema"
-              className="w-full h-full object- rounded-lg"
-              onClick={() => handleClick(UzbKarta)}
-            />
+          <div className="w-full  h-full p-3    rounded-lg overflow-hidden">
+            {floorImage ? (
+              <img
+                src={floorImage}
+                alt="Etaj sxemasi"
+                className="w-full h-[90%] object-cover rounded-lg cursor-pointer"
+                onClick={() => handleImageClick(floorImage)}
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-white">
+                Iltimos, etaj tanlang
+              </div>
+            )}
             <ImageModal
               src={selectedImage}
-              alt="Zoomed"
-              isOpen={open}
-              onClose={() => setOpen(false)}
+              alt="Yaqinlashtirilgan sxema"
+              isOpen={isOpen}
+              onClose={() => setIsOpen(false)}
             />
           </div>
         </div>
 
         {/* 3) O‘ng blok */}
-        <div className="col-span-3 bg-[#2E3741] rounded-xl p-5 flex flex-col gap-4">
+        <div className="col-span-3 bg-[#2E3741] rounded-xl p-3 flex flex-col gap-4">
           <div className="flex justify-between flex-coll items-center">
             <h3 className="text-white text-[20px] font-semibold">
               Huquqbuzarliklar
@@ -167,10 +197,8 @@ export default function UniversityDetail() {
               <CustomSelect
                 value={offenYear}
                 onChange={setOffenYear}
-                options={["2025", "2024", "2023", "2022"]}
+                options={["2025", "2024"]}
                 icon={<CalendarDays />}
-                className="w-max"
-                width={180}
               />
             </form>
           </div>
@@ -191,7 +219,7 @@ export default function UniversityDetail() {
                 </div>
 
                 {/* Texts */}
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-start justify-start">
                   <h1
                     // lg:text-[14px] xl:text-[20px]
                     className=" 
@@ -199,7 +227,7 @@ export default function UniversityDetail() {
                   >
                     {item.title}
                   </h1>
-                  <h2 className="text-[22px] font-bold mt-1">{item.number}</h2>
+                  <h2 className="text-[27px] font-bold mt-1">{item.number}</h2>
                 </div>
               </div>
             ))}
@@ -210,28 +238,28 @@ export default function UniversityDetail() {
       <div className="grid grid-cols-3 gap-8">
         <div className="">
           <UniverServCard
-            title="Kunduzgi ta’limda o‘qiyotgan talabalar"
-            id={103}
-            img={DetIcon1}
-            number={25}
+            title={universityDashboard[12].title}
+            id={universityDashboard[12].id}
+            img={universityDashboard[12].icon}
+            number={universityDashboard[12].number}
             mode="row"
           />
         </div>
         <div className="">
           <UniverServCard
-            title="Kechki ta’limda o‘qiyotgan talabalar"
-            id={103}
-            img={DetIcon1}
-            number={25}
+            title={universityDashboard[13].title}
+            id={universityDashboard[13].id}
+            img={universityDashboard[13].icon}
+            number={universityDashboard[13].number}
             mode="row"
           />
         </div>
         <div className="">
           <UniverServCard
-            title="Sirtqi ta’limda o‘qiyotgan talabalar"
-            id={103}
-            img={DetIcon1}
-            number={25}
+            title={universityDashboard[14].title}
+            id={universityDashboard[14].id}
+            img={universityDashboard[14].icon}
+            number={universityDashboard[14].number}
             mode="row"
           />
         </div>
@@ -241,38 +269,36 @@ export default function UniversityDetail() {
         <div>
           <div>
             <UniverServCard
-              img={DetIcon1}
-              number={255}
-              id={101}
-              title=" Sirtqi talimda uqiydiogn talabalar"
-              className="h-full flex-1"
+              img={universityDashboard[15].icon}
+              number={universityDashboard[15].number}
+              id={universityDashboard[15].id}
+              title={universityDashboard[15].title}
+              className="h-[200px] flex-1"
               mode="side"
             />
           </div>
           <div className=" gap-4 mt-4 inline-flex ">
             <div>
               <UniverServCard
-                img={DetIcon1}
-                number={255}
-                id={101}
-                title=" Uzoq muddatga chiqib ketgan talabalar"
+                img={universityDashboard[16].icon}
+                number={universityDashboard[16].number}
+                id={universityDashboard[16].id}
+                title={universityDashboard[16].title}
                 className="h-full  flex-1"
                 mode="column"
                 classNameitem=" 
-                space-y-44
+                space-y-30
                  "
-                classPadText="gap-15"
               />
             </div>
             <div>
               <UniverServCard
-                img={DetIcon1}
-                number={255}
-                id={101}
-                title="     Uzoq muddatdan qaytib kelgan talabalar"
+                img={universityDashboard[17].icon}
+                number={universityDashboard[17].number}
+                id={universityDashboard[17].id}
+                title={universityDashboard[17].title}
                 className=" h-full flex-1"
                 mode="column"
-                classPadText="gap-15"
               />
             </div>
           </div>
@@ -281,31 +307,31 @@ export default function UniversityDetail() {
           <div className="grid grid-cols-2 gap-4 bg-[#2E3741] p-4 rounded-2xl">
             <div>
               <UniverServCard
-                img={DetIcon1}
-                number={255}
-                id={101}
-                title="  Ijarada turadiganlar talabalar"
+                img={universityDashboard[18].icon}
+                number={universityDashboard[18].number}
+                id={universityDashboard[18].id}
+                title={universityDashboard[18].title}
                 className=" h-full flex-1 bg-[#37414C]"
                 mode="column"
-                classNameitem=" space-y-4 "
+                classNameitem=" space-y-2.5 "
               />
             </div>
             <div>
               <UniverServCard
-                img={DetIcon1}
-                number={255}
-                id={101}
-                title="   Yotoqxonada turadigan talabalar"
+                img={universityDashboard[19].icon}
+                number={universityDashboard[19].number}
+                id={universityDashboard[19].id}
+                title={universityDashboard[19].title}
                 className=" h-full flex-1 bg-[#37414C]"
                 mode="column"
               />
             </div>
             <div>
               <UniverServCard
-                img={DetIcon1}
-                number={255}
-                id={101}
-                title="       Tanishinikida turgan talabalar"
+                img={universityDashboard[20].icon}
+                number={universityDashboard[20].number}
+                id={universityDashboard[20].id}
+                title={universityDashboard[20].title}
                 className=" h-full flex-1 bg-[#37414C]"
                 mode="column"
                 classNameitem=" max-[1310px]:space-y-4 "
@@ -313,10 +339,10 @@ export default function UniversityDetail() {
             </div>
             <div>
               <UniverServCard
-                img={DetIcon1}
-                number={255}
-                id={101}
-                title="          Uyida yoki qarindoshinikida yashovchilar"
+                img={universityDashboard[21].icon}
+                number={universityDashboard[21].number}
+                id={universityDashboard[21].id}
+                title={universityDashboard[21].title}
                 className=" h-full flex-1 bg-[#37414C]"
                 mode="column"
               />

@@ -34,16 +34,52 @@ import UzbKarta from "./map.png";
 import Neytral from "./neytral.svg";
 import Agresive from "./agresive.svg";
 import Xafa from "./xafa.svg";
-// import Xursand from "./xursand.svg";
 import Xursand from "./xu.svg";
+import BuildSxema from "./buildSxema.png";
+import BuildSxema2 from "./buildSxema2.jpg";
+import jaxl from "./jaxl.svg";
+
+import hududdaTopilmagan from "./Background (1).svg";
+import BattleStudent from "./Background (2).svg";
+import StrangerRoom from "./Background (3).svg";
+import StrangerUniver from "./Background (4).svg";
+import Narkalogiya from "./Background (5).svg";
+import HealthDispensaries from "./Background (6).svg";
+import GirlStudents from "./Background (7).svg";
+import DayTimeEducation from "./Background (8).svg";
+import NightEducation from "./Background (9).svg";
+import ExternalyEducation from "./Background (10).svg";
+import KvdaYashivcgilar from "./kvartirada yashovchilar.svg";
+import Crowdedness from "./Background (11).svg";
+import EventMeasures from "./Background (12).svg";
+import GoStateStudents from "./SVG (10).svg";
+
+import StudentReturnsLongTime from "./SVG (2).svg";
+import StudentGoLongTime from "./SVG (18).svg";
+import RentersStudent from "./SVG (3).svg";
+import DormitersLiveStudent from "./SVG (4).svg";
+import LivingStudentFriends from "./SVG (5).svg";
+import CrimesStudent from "./Background (13).svg";
+import LivengHomeStudent from "./SVG (28).svg";
+import MaskIcon from "./Background (15).svg";
+import Hijabicon from "./Background (16).svg";
+import BeardIcon from "./Background (17).svg";
 
 export {
+  jaxl,
   LoginBg,
   MachitIcon,
   StudentImg,
+  Crowdedness,
+  CrimesStudent,
+  EventMeasures,
   TableIcon,
+  BuildSxema2,
+  BuildSxema,
   DetIcon1,
+  GoStateStudents,
   Apperance,
+  LivengHomeStudent,
   UzbKarta,
   DarsQoldirish,
   Neytral,
@@ -63,6 +99,7 @@ export {
   talaba,
   Go,
   iconMood1,
+  StudentReturnsLongTime,
   Sxema,
   offenbicon1,
   offenbicon2,
@@ -75,4 +112,22 @@ export {
   good,
   bad,
   someone,
+  hududdaTopilmagan,
+  BattleStudent,
+  StrangerRoom,
+  StrangerUniver,
+  Narkalogiya,
+  HealthDispensaries,
+  GirlStudents,
+  DayTimeEducation,
+  NightEducation,
+  ExternalyEducation,
+  KvdaYashivcgilar,
+  StudentGoLongTime,
+  RentersStudent,
+  DormitersLiveStudent,
+  LivingStudentFriends,
+  MaskIcon,
+Hijabicon,
+BeardIcon,
 };

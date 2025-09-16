@@ -68,11 +68,58 @@ export default function Event() {
       kameraNomi: "Kamera #2",
       kameraJoylashuvi: "Sport zal",
     },
+    {
+      id: 2,
+      video: "https://www.w3schools.com/html/movie.mp4",
+      hodisaTuri: "Odamlar gavjumligi",
+      aniqlanganVaqt: "2025-08-28 09:15",
+      kameraNomi: "Kamera #2",
+      kameraJoylashuvi: "Sport zal",
+    },
+    {
+      id: 2,
+      video: "https://www.w3schools.com/html/movie.mp4",
+      hodisaTuri: "Odamlar gavjumligi",
+      aniqlanganVaqt: "2025-08-28 09:15",
+      kameraNomi: "Kamera #2",
+      kameraJoylashuvi: "Sport zal",
+    },
+    {
+      id: 2,
+      video: "https://www.w3schools.com/html/movie.mp4",
+      hodisaTuri: "Odamlar gavjumligi",
+      aniqlanganVaqt: "2025-08-28 09:15",
+      kameraNomi: "Kamera #2",
+      kameraJoylashuvi: "Sport zal",
+    },
+    {
+      id: 2,
+      video: "https://www.w3schools.com/html/movie.mp4",
+      hodisaTuri: "Odamlar gavjumligi",
+      aniqlanganVaqt: "2025-08-28 09:15",
+      kameraNomi: "Kamera #2",
+      kameraJoylashuvi: "Sport zal",
+    },
+    {
+      id: 2,
+      video: "https://www.w3schools.com/html/movie.mp4",
+      hodisaTuri: "Odamlar gavjumligi",
+      aniqlanganVaqt: "2025-08-28 09:15",
+      kameraNomi: "Kamera #2",
+      kameraJoylashuvi: "Sport zal",
+    },
+    {
+      id: 2,
+      video: "https://www.w3schools.com/html/movie.mp4",
+      hodisaTuri: "Odamlar gavjumligi",
+      aniqlanganVaqt: "2025-08-28 09:15",
+      kameraNomi: "Kamera #2",
+      kameraJoylashuvi: "Sport zal",
+    },
   ];
 
   return (
     <div>
-      {/* qidiruv va filter */}
       <div className="mb-4 flex items-center gap-4">
         <div className="bg-[#2E3741] flex items-center rounded-lg py-2 px-2">
           <Search className="ml-2 text-white" />
@@ -99,7 +146,6 @@ export default function Event() {
         />
       </div>
 
-      {/* table */}
       <CustomTable
         columns={columns}
         data={data}
@@ -107,7 +153,7 @@ export default function Event() {
         showPagination={true}
       />
 
-      {/* modal */}
+      {/* Modal */}
       <ProfilaktikaModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

@@ -234,14 +234,12 @@ export default function ProfilaktikaModal({
 
             <button
               onClick={handleSubmit}
-              className="mt-4 bg-[#0095FF] hover:bg-[#0077CC] px-6 py-2 rounded-lg font-semibold"
+              className="mt-4 w-full bg-[#0095FF] hover:bg-[#0077CC] px-6 py-3 rounded-lg font-semibold"
             >
               Yuborish
             </button>
           </div>
         </div>
-
-        {/* Izoh va Submit form tashqarida */}
       </div>
     </div>
   );
