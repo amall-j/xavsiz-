@@ -1,6 +1,166 @@
+// import { Info } from "lucide-react";
+// import { CustomTable } from "../../components/Table";
+// import CustomSelect from "../../components/CustumSelect";
+// import { useState } from "react";
+
+// const columns = [
+//   {
+//     key: "id",
+//     title: "№",
+//     align: "center" as const,
+//     render: (v: string) => <p className="text-[20px]">{v}</p>,
+//   },
+//   {
+//     key: "userImg",
+//     title: "Rasm",
+//     align: "center" as const,
+//     render: (v: string) => (
+//       <img src={v} className="w-10 h-10 rounded-full mx-auto" />
+//     ),
+//   },
+//   {
+//     key: "eventImg",
+//     title: "Biriktirilgan foto",
+//     align: "center" as const,
+//     render: (v: string) => (
+//       <img src={v} className="w-16 h-10 rounded-md mx-auto" />
+//     ),
+//   },
+//   {
+//     key: "participants",
+//     title: "Qatnashuvchilar",
+//     align: "center" as const,
+//     render: (_: any, row: any) => (
+//       <div className="flex items-center gap-3">
+//         <p className="bg-[#37414C] px-3 py-2 rounded-md text-[16px]">
+//           {row.participant1}
+//         </p>
+//         <p className="bg-[#37414C] px-3 py-2 rounded-md text-[16px]">
+//           {row.participant2}
+//         </p>
+//       </div>
+//     ),
+//   },
+//   {
+//     key: "date",
+//     title: "Yaratilgan vaqt",
+//     align: "center" as const,
+//     render: (v: string) => <p className="text-[15px]">{v}</p>,
+//   },
+//   {
+//     key: "university",
+//     title: "Universitet nomi",
+//     align: "center" as const,
+//     render: (v: string) => <p className="text-[20px]">{v}</p>,
+//   },
+//   {
+//     key: "eventType",
+//     title: "Hodisa turi",
+//     align: "center" as const,
+//     render: (v: string) => (
+//       <p className="bg-[#37414C]   text-[16px] py-3 rounded-md">{v}</p>
+//     ),
+//   },
+//   {
+//     key: "comment",
+//     title: "Izoh",
+//     align: "center" as const,
+//     render: (v: string) => (
+//       <div className="flex items-center justify-center gap-2">
+//         <p className="text-[15px]">{v}</p>
+//         <Info size={18} className="text-gray-400 cursor-pointer" />
+//       </div>
+//     ),
+//   },
+//   {
+//     key: "holat",
+//     title: "Holat",
+//     align: "center" as const,
+//     render: (
+//       value: string,
+//       row: any,
+//       handleHolatChange?: (id: number, newValue: string) => void
+//     ) => {
+//       const options = ["Yangi", "Jarayonda"];
+//       const selectClassName =
+//         value === "Yangi" ? "bg-blue-600" : "bg-yellow-500";
+//       return (
+//         <CustomSelect
+//           value={value}
+//           onChange={(newValue) =>
+//             handleHolatChange && handleHolatChange(row.id, newValue)
+//           }
+//           options={options}
+//           placeholder="Holatni tanlang"
+//           className={selectClassName}
+//         />
+//       );
+//     },
+//   },
+//   {
+//     key: "aybdorStud",
+//     title: "Aybdor talaba",
+//     align: "center" as const,
+//     render: (
+//       value: string,
+//       row: any,
+//       handleHolatChange?: (id: number, newValue: string) => void
+//     ) => {
+//       const options = ["Uchrashuv belgilash", "Suxbat qurish"];
+//       return (
+//         <CustomSelect
+//           value={value}
+//           onChange={(newValue) =>
+//             handleHolatChange && handleHolatChange(row.id, newValue)
+//           }
+//           options={options}
+//           placeholder="Holatni tanlang"
+//         />
+//       );
+//     },
+//   },
+// ];
+
+// export default function Profilaktika() {
+//   const [tableData, setTableData] = useState(data);
+//   const [currentPage, setCurrentPage] = useState(1);
+
+//   const rowsPerPage = 10;
+//   const totalPages = Math.ceil(tableData.length / rowsPerPage);
+//   const paginatedData = tableData.slice(
+//     (currentPage - 1) * rowsPerPage,
+//     currentPage * rowsPerPage
+//   );
+
+//   const handleHolatChange = (id: number, newValue: string) => {
+//     setTableData((prev) =>
+//       prev.map((row) => (row.id === id ? { ...row, holat: newValue } : row))
+//     );
+//   };
+
+//   return (
+//     <div className="p-6 overflow-x-auto">
+//       <CustomTable
+//         title="Profilaktika hodisalari"
+//         columns={columns}
+//         data={paginatedData}
+//         showPagination={true}
+//         currentPage={currentPage}
+//         totalPages={totalPages}
+//         onPageChange={(page) => {
+//           if (page >= 1 && page <= totalPages) {
+//             setCurrentPage(page);
+//           }
+//         }}
+//         onHolatChange={handleHolatChange}
+//       />
+//     </div>
+//   );
+// }
 import { Info } from "lucide-react";
 import { CustomTable } from "../../components/Table";
 import CustomSelect from "../../components/CustumSelect";
+import { Pagination } from "../../components/Pagination"; // ✅ qo'shildi
 import { useState } from "react";
 
 const data = [
@@ -169,7 +329,7 @@ const columns = [
     title: "Hodisa turi",
     align: "center" as const,
     render: (v: string) => (
-      <p className="bg-[#37414C]   text-[16px] py-3 rounded-md">{v}</p>
+      <p className="bg-[#37414C] text-[16px] py-3 rounded-md">{v}</p>
     ),
   },
   {
@@ -236,8 +396,9 @@ export default function Profilaktika() {
   const [tableData, setTableData] = useState(data);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const rowsPerPage = 5;
+  const rowsPerPage = 8; // ✅ sahifada nechta qatordan chiqarishni belgilash
   const totalPages = Math.ceil(tableData.length / rowsPerPage);
+
   const paginatedData = tableData.slice(
     (currentPage - 1) * rowsPerPage,
     currentPage * rowsPerPage
@@ -250,21 +411,22 @@ export default function Profilaktika() {
   };
 
   return (
-    <div className="p-6 overflow-x-auto">
+    <div className=" overflow-x-auto overflow-hidden">
       <CustomTable
         title="Profilaktika hodisalari"
         columns={columns}
         data={paginatedData}
-        showPagination={true}
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={(page) => {
-          if (page >= 1 && page <= totalPages) {
-            setCurrentPage(page);
-          }
-        }}
         onHolatChange={handleHolatChange}
       />
+
+      {/* ✅ Pagination pastda */}
+      <div className="mt-2 flex justify-start">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
+      </div>
     </div>
   );
 }
