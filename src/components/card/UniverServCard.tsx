@@ -51,13 +51,15 @@ export default function UniverServCard({
             <h3 className="text-[16px] text-[#8EA1B6] font-medium">{title}</h3>
           </div>
 
-          <div className="flex justify-center items-center  gap-3  flex-1300 max-w-[200px]  ">
-            <p className={`text-[22px] font-semibold max-[1300px]:text-[16px]`}>
+          <div className="flex justify-center items-center  gap-3  flex-1300 max-w-[200px]   ">
+            <p
+              className={`text-[22px] font-semibold max-[1300px]:text-[16px] translate-y-`}
+            >
               {number}
             </p>
 
             {(extraNumber || extraIcon) && (
-              <div className="flex items-center justify-end gap-1 -translate-y-4 ">
+              <div className="flex items-center justify-end gap-1  ">
                 {extraNumber !== undefined && (
                   <>
                     <span
