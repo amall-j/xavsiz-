@@ -92,8 +92,14 @@ export default function KPI() {
       </div>
 
       <div className="flex gap-[14px] mt-[35px] items-stretch">
-        <img className="rounded-[16px] 2xl:w-1/2 h-full" src={map} alt="" />
-        <div className="bg-[#2E3741] p-[20px] rounded-[16px] w-full 2xl:w-1/2">
+        <div className="w-1/2">
+          <img
+            className="rounded-[16px]  w-full h-full object-cover "
+            src={map}
+            alt=""
+          />
+        </div>
+        <div className="bg-[#2E3741] p-[20px] rounded-[16px]  w-1/2 ">
           <h2 className="text-[20px]/[31px] font-medium text-white">
             Viloyatlar kesimida o'rtancha KPI reytingi
           </h2>

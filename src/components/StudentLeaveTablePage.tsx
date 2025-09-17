@@ -230,14 +230,16 @@ export default function StudentTablePage() {
   ];
 
   return (
-    <div className="">
-      <CustomTable
-        columns={columns}
-        data={data}
-        striped
-        showPagination={false}
-      />
-
+    <div className="overflow-x-auto">
+      <div className="min-w-[1400px]">
+        <CustomTable
+          columns={columns}
+          data={data}
+          striped
+          showPagination={false}
+          className="w-full"
+        />
+      </div>
       {/* Modal */}
       {showModal && (
         <StudentModal onClose={() => setShowModal(false)}>
@@ -245,7 +247,7 @@ export default function StudentTablePage() {
           <p>Bu yerda dars jadvali ma'lumotlari chiqadi...</p>
           <button
             onClick={() => setShowModal(false)}
-            className="mt-4 px-3 py-1 bg-red-500 text-white rounded"
+            className="mt-4 px-3 py-1  text-white rounded"
           >
             Yopish
           </button>

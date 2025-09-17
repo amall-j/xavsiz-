@@ -1,5 +1,5 @@
 import { ChevronLeft } from "lucide-react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Breadcrumb from "../../../../components/BreadCrumb";
 import StudentTablePage from "../../../../components/StudentLeaveTablePage";
 
@@ -28,7 +28,7 @@ export default function StudentLeave() {
           </h1>
         </div>
       </div>
-      <div className="mt-5">
+      <div className="mt-5 ">
         <StudentTablePage />
       </div>
     </div>

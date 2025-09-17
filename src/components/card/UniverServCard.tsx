@@ -52,15 +52,19 @@ export default function UniverServCard({
           </div>
 
           {/* number + optional extra */}
-          <div className="flex items-center gap-3 mt-2 flex-1300">
-            <p className={`text-[22px] font-semibold ${numColor}`}>{number} </p>
+          <div className="flex items-center justify-center gap-3 mt-2 flex-1300 max-w-[200px]  ">
+            <p className={`text-[22px] font-semibold max-[1300px]:text-[16px]`}>
+              {number}
+            </p>
 
             {(extraNumber || extraIcon) && (
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-1 ">
                 {extraNumber !== undefined && (
                   <>
-                    <span>/</span>
-                    <span className={`text-[22px] font-medium ${extraColor}`}>
+                    <span
+                      className={`text-[22px] max-[1300px]:text-[16px] font-medium ${extraColor}`}
+                    >
+                      <span className="text-white">/</span>
                       {extraNumber} %
                     </span>
                   </>
@@ -69,7 +73,7 @@ export default function UniverServCard({
                   <img
                     src={extraIcon}
                     alt="extra"
-                    className="w-10 h-10 object-contain"
+                    className="w-10 h-10 max-[1300px]:w-6 max-[1300px]:h-6 object-contain"
                   />
                 )}
               </div>

@@ -145,13 +145,14 @@ export default function Event() {
           }
         />
       </div>
-
-      <CustomTable
-        columns={columns}
-        data={data}
-        striped
-        showPagination={true}
-      />
+      <div className="rounded-lg overflow-hidden">
+        <CustomTable
+          columns={columns}
+          data={data}
+          striped
+          showPagination={true}
+        />
+      </div>
 
       {/* Modal */}
       <ProfilaktikaModal

@@ -414,7 +414,7 @@ export default function Profilaktika() {
   };
 
   return (
-    <div className=" overflow-x-auto overflow-hidden">
+    <div className=" overflow-x-auto ">
       <CustomTable
         title="Profilaktika hodisalari"
         columns={columns}

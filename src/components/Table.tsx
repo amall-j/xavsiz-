@@ -26,7 +26,7 @@ export function CustomTable({
       )}
 
       <div className="overflow-x-auto">
-        <table className="w-full">
+        <table className="w-full bg-red-500 ">
           <thead>
             <tr className="bg-[#344363] text-[#CACACA]">
               {columns.map((column) => (
@@ -94,7 +94,7 @@ export function CustomTable({
                       }`}
                     >
                       {column.render
-                        ? column.render(row[column.key], row, onHolatChange) // Передаем onHolatChange как третий аргумент
+                        ? column.render(row[column.key], row, onHolatChange)
                         : row[column.key]}
                     </td>
                   ))}
