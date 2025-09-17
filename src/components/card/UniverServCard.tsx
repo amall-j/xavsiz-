@@ -44,27 +44,26 @@ export default function UniverServCard({
       `}
     >
       {mode === "top" && (
-        <div className="flex flex-col justify-between w-full">
+        <div className="flex flex-col justify-center items-center  w-full">
           {/* icon + title */}
-          <div className="flex flex-1300 items-center gap-2">
+          <div className="flex flex-1300 items-center gap-2 max-[1320px]:min-h-[150px] ">
             <img src={img} alt={title} className="w-20 h-20 object-contain" />
             <h3 className="text-[16px] text-[#8EA1B6] font-medium">{title}</h3>
           </div>
 
-          {/* number + optional extra */}
-          <div className="flex items-center justify-center gap-3 mt-2 flex-1300 max-w-[200px]  ">
+          <div className="flex justify-center items-center  gap-3  flex-1300 max-w-[200px]  ">
             <p className={`text-[22px] font-semibold max-[1300px]:text-[16px]`}>
               {number}
             </p>
 
             {(extraNumber || extraIcon) && (
-              <div className="flex items-center gap-1 ">
+              <div className="flex items-center justify-end gap-1 -translate-y-4 ">
                 {extraNumber !== undefined && (
                   <>
                     <span
                       className={`text-[22px] max-[1300px]:text-[16px] font-medium ${extraColor}`}
                     >
-                      <span className="text-white">/</span>
+                      <span className="text-white max-[1320px]:hidden">/</span>
                       {extraNumber} %
                     </span>
                   </>
@@ -73,7 +72,7 @@ export default function UniverServCard({
                   <img
                     src={extraIcon}
                     alt="extra"
-                    className="w-10 h-10 max-[1300px]:w-6 max-[1300px]:h-6 object-contain"
+                    className="w-10 h-10 max-[1330px]:w-7 max-[1300px]:h-7 object-contain"
                   />
                 )}
               </div>

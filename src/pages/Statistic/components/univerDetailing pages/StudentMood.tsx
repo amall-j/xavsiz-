@@ -1,7 +1,6 @@
 import { useState } from "react";
 import {
   Agresive,
-
   MoodLoading,
   Neytral,
   Xafa,
@@ -124,6 +123,7 @@ export default function UniversityDetailStat() {
           />
         </div>
       </div>
+      <div></div>
       {!studentsMood ? (
         <div className="flex items-center flex-col gap-5 justify-center mt-25 ">
           <div>

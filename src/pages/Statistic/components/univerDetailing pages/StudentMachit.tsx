@@ -174,7 +174,7 @@ export default function StudentMachit() {
                   </p>
                 </div>
                 <div className=" py-3 px-4 flex items-center justify-center gap-2 bg-[#37414C]  rounded-[8px] text-[#AAC0D8] w-max">
-                  <p className="text-[#C9C9C9] text-[18px] flex items-center gap-2 ">
+                  <p className="text-[#C9C9C9] text-[16px] flex items-center gap-2 ">
                     {student.date}
                   </p>
                 </div>
