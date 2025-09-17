@@ -360,23 +360,26 @@ export default function UniversityDetail() {
           </div>
           <div className="h-[16px] rounded-full w-full  bg-[#FDCB6E]"></div>
           <div className="grid grid-cols-2 gap-4 mt-10">
-            <div className="flex flex-col pr-20 p-5 items-start justify-center bg-[#37414C] rounded-2xl">
-              <img src={talaba} alt="" className="mt-3 mb-8 w-full" />
+            <div className="flex flex-col p-5 gap-5 items-start justify-end bg-[#37414C] rounded-2xl">
+              <div className="max-w-35 max-h-35  h-full ">
+                <img src={talaba} alt="" className=" w-full h-full" />
+              </div>
               <div className="h-[16px] rounded-full w-full bg-[#D63031]"></div>
-              <h1 className="text-[24px] font-normal ">
+              <h1 className="text-[24px] font-normal min-[1350px]:h-[65px] max-[1349px]:h-[130px]   ">
                 Yosh talabalar tomonidan
               </h1>
               <h1 className="text-[35px] font-normal pt-5 text-left">16</h1>
             </div>
-            <div className="flex flex-col pr-20 p-5 items-start justify-center bg-[#37414C] rounded-2xl">
-              <img src={yoshlar} alt="" className="mb-10 w-full" />
-              <div className="h-[16px] rounded-full w-full -translate-y-5 bg-[#FDCB6E]"></div>
-              <h1 className="text-[24px] font-normal -translate-y-4 ">
+            {/*  */}
+            <div className="flex flex-col p-5 gap-5 items-start justify-end bg-[#37414C] rounded-2xl">
+              <div className="max-w-35 max-h-35 h-full  ">
+                <img src={yoshlar} alt="" className=" w-full h-full" />
+              </div>
+              <div className="h-[16px] rounded-full w-full bg-[#FDCB6E]"></div>
+              <h1 className="text-[24px] font-normal min-[1350px]:h-[100px] max-[1349px]:h-[165px]   ">
                 Yoshlar o‘rtasida
               </h1>
-              <h1 className="text-[35px]  translate-y-4  font-normal mt-5 text-left">
-                16
-              </h1>
+              <h1 className="text-[35px] font-normal pt-5 text-left">16</h1>
             </div>
           </div>
         </div>

@@ -26,7 +26,7 @@ export function CustomTable({
       )}
 
       <div className="overflow-x-auto">
-        <table className="w-full bg-red-500 ">
+        <table className="w-full  ">
           <thead>
             <tr className="bg-[#344363] text-[#CACACA]">
               {columns.map((column) => (
