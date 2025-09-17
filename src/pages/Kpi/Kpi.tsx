@@ -86,18 +86,18 @@ export default function KPI() {
             title="Jinoyat oldini olish bo'yicha qo'shimcha chora-tadbirlar"
             num="0"
             isFlex={false}
-            className="h-full justify-center items-start gap-8"
+            className="h-[95%] justify-center items-start gap-8"
           />
         </div>
       </div>
 
       <div className="flex gap-[14px] mt-[35px] items-stretch">
-        <img className="rounded-lg 2xl:w-1/2 2xl:h-[750px]" src={map} alt="" />
+        <img className="rounded-[16px] 2xl:w-1/2 h-full" src={map} alt="" />
         <div className="bg-[#2E3741] p-[20px] rounded-[16px] w-full 2xl:w-1/2">
           <h2 className="text-[20px]/[31px] font-medium text-white">
             Viloyatlar kesimida o'rtancha KPI reytingi
           </h2>
-          <div className="flex flex-col gap-4 mt-[15px]">
+          <div className="flex flex-col gap-[15px] mt-[15px]">
             {data.map((item, idx) => (
               <KPIProgress
                 key={idx}

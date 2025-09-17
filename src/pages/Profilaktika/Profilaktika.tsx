@@ -286,7 +286,10 @@ const columns = [
     title: "Rasm",
     align: "center" as const,
     render: (v: string) => (
-      <img src={v} className="w-10 h-10 rounded-full mx-auto" />
+      <div className="flex ">
+        <img src={v} className="w-10 h-10 translate-x-5 rounded-full mx-auto" />
+        <img src={v} className="w-10 h-10  rounded-full mx-auto" />
+      </div>
     ),
   },
   {
@@ -329,7 +332,7 @@ const columns = [
     title: "Hodisa turi",
     align: "center" as const,
     render: (v: string) => (
-      <p className="bg-[#37414C] text-[16px] py-3 rounded-md">{v}</p>
+      <p className="bg-[#37414C] text-[16px] py-3 px-0.5 rounded-md">{v}</p>
     ),
   },
   {
@@ -363,7 +366,7 @@ const columns = [
           }
           options={options}
           placeholder="Holatni tanlang"
-          className={selectClassName}
+          className={`${selectClassName} w-[120px] flex `}
         />
       );
     },
